@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-root=".">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet / Salty — Cookie & Pastry Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="all-recipes.html">All recipes</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">Top collections</button>
+          <div class="nav-dropdown-menu">
+            <a href="collection-pages/cookie-recipes.html">Cookies</a>
+            <a href="collection-pages/france-recipes.html">France</a>
+            <a href="collection-pages/pastry-recipes.html">Pastry</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="all-recipes.html">All recipes</a>
+  <span class="mobile-dropdown-label">Top collections</span>
+  <div class="mobile-dropdown-items">
+    <a href="collection-pages/cookie-recipes.html">Cookies</a>
+    <a href="collection-pages/france-recipes.html">France</a>
+    <a href="collection-pages/pastry-recipes.html">Pastry</a>
+  </div>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">
+    <span class="word">It's</span>
+    <span class="word">always</span>
+    <span class="word">time</span>
+    <span class="word">for</span>
+    <span class="word-container">
+      <span class="word-box">
+        <span class="word-mover">
+          <span class="rotating-word">a cookie</span>
+          <span class="rotating-word">a pastry</span>
+          <span class="rotating-word">a cake</span>
+          <span class="rotating-word">dessert</span>
+          <span class="rotating-word">a cookie</span>
+        </span>
+      </span>
+    </span>
+  </h1>
+  <a href="#collection" class="hero-scroll-btn" aria-label="Scroll down">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 5v14M5 13l7 7 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- COLLECTION BROWSER -->
+<div class="collection-browser" id="collection">
+  <div class="collection-browser-img">
+    <img src="images/65fd5465045adba14a91bfdc_Ingridients.jpg" alt="Recipe ingredients">
+  </div>
+  <div class="collection-browser-panel">
+    <p class="collection-eyebrow">Browse our recipe collections</p>
+    <div class="collection-links">
+      <a href="collection-pages/sweet-recipes.html">Sweet</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/cookie-recipes.html">Cookies</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/easy-level-recipes.html">Easy</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/france-recipes.html">France</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/germany-recipes.html">Germany</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/usa-recipes.html">USA</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/denmark-recipes.html">Denmark</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/pastry-recipes.html">Pastry</a>
+      <span class="collection-sep">/</span>
+      <a href="collection-pages/breakfast-recipes.html">Breakfast</a>
+    </div>
+    <a href="all-recipes.html" class="collection-browse-all">
+      Browse all recipes
+      <img src="images/65f2d3b814c63555a461e087_arrow.svg" alt="">
+    </a>
+  </div>
+</div>
+
+<!-- FEATURED RECIPES -->
+<section id="recipes">
+  <div class="container">
+    <div class="section-heading section-heading--left">
+      <h2>Selected cookie recipes</h2>
+    </div>
+    <div class="recipe-grid">
+
+      <!-- Ka'ak -->
+      <article class="recipe-card">
+        <a href="recipe-pages/savory-libyan-kaak.html" class="recipe-card-img">
+          <img src="images/66d8046f1a2bf9c9c828c40d_Kaak.jpg" alt="Savory Libyan Ka'ak">
+        </a>
+        <div class="recipe-card-body">
+          <h3><a href="recipe-pages/savory-libyan-kaak.html">Savory Libyan Ka'ak</a></h3>
+          <p>Traditional ring-shaped cookies that hold a special place in Libyan cuisine</p>
+          <div class="recipe-tags">
+            <a href="collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+            <a href="collection-pages/middle-east-recipes.html" class="tag">Middle East</a>
+            <a href="collection-pages/salty-recipes.html" class="tag">Salty</a>
+            <a href="collection-pages/moderate-level-recipes.html" class="tag">Moderate</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Biscotti -->
+      <article class="recipe-card">
+        <a href="recipe-pages/biscotti.html" class="recipe-card-img">
+          <img src="images/66938ab052591b8b1e3baa47_Biscotti.jpg" alt="Biscotti">
+        </a>
+        <div class="recipe-card-body">
+          <h3><a href="recipe-pages/biscotti.html">Biscotti</a></h3>
+          <p>Traditional Italian cookie known for its crunchy texture &amp; long shelf life</p>
+          <div class="recipe-tags">
+            <a href="collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+            <a href="collection-pages/italy-recipes.html" class="tag">Italy</a>
+            <a href="collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+            <a href="collection-pages/moderate-level-recipes.html" class="tag">Moderate</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sablé -->
+      <article class="recipe-card">
+        <a href="recipe-pages/sable-cookies.html" class="recipe-card-img">
+          <img src="images/662122e2c2248e3e2b6997fb_Sable.jpg" alt="Sablé Cookies">
+        </a>
+        <div class="recipe-card-body">
+          <h3><a href="recipe-pages/sable-cookies.html">Sablé Cookies</a></h3>
+          <p>This French butter cookie, originates from the town of Sablé-sur-Sarthe</p>
+          <div class="recipe-tags">
+            <a href="collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+            <a href="collection-pages/france-recipes.html" class="tag">France</a>
+            <a href="collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+            <a href="collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Danish Butter -->
+      <article class="recipe-card">
+        <a href="recipe-pages/danish-butter-cookies.html" class="recipe-card-img">
+          <img src="images/65fea7a07c4899eab78aabec_Danish-butter.jpg" alt="Danish Butter">
+        </a>
+        <div class="recipe-card-body">
+          <h3><a href="recipe-pages/danish-butter-cookies.html">Danish Butter</a></h3>
+          <p>Danish classic cookie. Characterized by rich buttery flavor and crisp texture</p>
+          <div class="recipe-tags">
+            <a href="collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+            <a href="collection-pages/denmark-recipes.html" class="tag">Denmark</a>
+            <a href="collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+            <a href="collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FRANCE BANNER -->
+<section class="banner-section">
+  <div class="banner">
+    <div class="banner-text">
+      <div class="banner-title">Bonjour! Let's visit France</div>
+      <p class="banner-body">Pastries, cookies, and desserts all waiting for you in our French recipes collection</p>
+      <a href="collection-pages/france-recipes.html" class="banner-cta">
+        France recipes collection
+        <img src="images/65f2d3b814c63555a461e087_arrow.svg" alt="">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="about-teaser">
+  <div class="container">
+    <div class="what-is-label">What is Sweet / Salty?</div>
+    <p class="what-is-body">We are all about cookies, pastry, deserts and everything delicious. We use simple &amp; easy to follow recipes to make the experience as simple as possible so you can start baking right now.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="all-recipes.html">All recipes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

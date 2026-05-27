@@ -568,7 +568,7 @@ a.tag { cursor: pointer; }
 }
 .banner-cta img {
   width: 18px;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
   transform: rotate(-90deg);
 }
 

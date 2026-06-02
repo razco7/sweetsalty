@@ -515,7 +515,9 @@ section { padding: 80px 0; }
 a.tag { cursor: pointer; }
 .recipe-tags .tag + .tag::before {
   content: "\00a0·\00a0";
+  display: inline-block;
   color: var(--text-muted);
+  text-decoration: none;
   pointer-events: none;
 }
 

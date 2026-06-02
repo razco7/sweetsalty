@@ -112,15 +112,18 @@ if (wordMover) {
   const dur = 380;
   let current = 0;
 
-  // Lock the box to exactly one slot height so overflow:hidden clips the rest
-  const slotH = slots[0].offsetHeight;
+  // Use getBoundingClientRect for sub-pixel accuracy — offsetHeight rounds
+  // to integers which causes 1-2px bleed from the previous word at the top
+  const gap = 8;
+  const slotH = slots[0].getBoundingClientRect().height;
+  const step = slotH + gap;
   wordBox.style.height = slotH + 'px';
 
   setInterval(() => {
     current++;
 
     wordMover.style.transition = `transform ${dur}ms ${ease}`;
-    wordMover.style.transform = `translateY(-${current * slotH}px)`;
+    wordMover.style.transform = `translateY(-${current * step}px)`;
 
     // Last slot is a duplicate of the first — snap back silently after it lands
     if (current === slots.length - 1) {

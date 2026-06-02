@@ -438,7 +438,7 @@ section { padding: 80px 0; }
    RECIPE GRID & CARDS
    ========================================== */
 #recipes {
-  padding: 72px 0;
+  padding: 72px 0 0;
 }
 .recipe-grid {
   display: grid;
@@ -522,8 +522,8 @@ a.tag { cursor: pointer; }
    FRANCE BANNER
    ========================================== */
 .banner-section {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 72px;
+  margin-bottom: 72px;
 }
 .banner {
   background-image: url('../images/66276de41ab0a14385aa4bc1_Banner_FR22.jpg');

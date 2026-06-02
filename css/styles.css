@@ -437,9 +437,8 @@ section { padding: 80px 0; }
 /* ==========================================
    RECIPE GRID & CARDS
    ========================================== */
-#recipes .container {
-  padding-top: 72px;
-  padding-bottom: 72px;
+#recipes {
+  padding: 72px 0;
 }
 .recipe-grid {
   display: grid;

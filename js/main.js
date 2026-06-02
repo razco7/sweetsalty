@@ -118,6 +118,7 @@ if (wordMover) {
   const slotH = slots[0].getBoundingClientRect().height;
   const step = slotH + gap;
   wordBox.style.height = slotH + 'px';
+  wordMover.style.opacity = '1';
 
   setInterval(() => {
     current++;

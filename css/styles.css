@@ -494,9 +494,12 @@ section { padding: 80px 0; }
 }
 .recipe-tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 4px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
 }
 .tag {
   display: inline-block;

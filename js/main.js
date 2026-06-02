@@ -137,6 +137,22 @@ if (wordMover) {
   }, 2600);
 }
 
+/* ---- Recipe tag overflow: hide last tag until all fit ---- */
+function fitRecipeTags() {
+  document.querySelectorAll('.recipe-tags').forEach(container => {
+    const tags = Array.from(container.querySelectorAll('.tag'));
+    // Reset visibility
+    tags.forEach(t => t.style.display = '');
+    // Hide from the end until nothing overflows
+    for (let i = tags.length - 1; i >= 0; i--) {
+      if (container.scrollWidth <= container.clientWidth) break;
+      tags[i].style.display = 'none';
+    }
+  });
+}
+fitRecipeTags();
+window.addEventListener('resize', fitRecipeTags);
+
 /* ---- Newsletter forms ---- */
 document.querySelectorAll('.newsletter-form').forEach(form => {
   form.addEventListener('submit', e => {

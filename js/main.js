@@ -162,6 +162,10 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
   });
 });
 
+/* ---- Auto-update copyright year ---- */
+const yearEl = document.getElementById('copyright-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 /* ---- Contact form ---- */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

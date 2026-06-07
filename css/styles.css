@@ -651,7 +651,7 @@ a.tag { cursor: pointer; }
 .recipe-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: calc(100svh - var(--nav-height));
+  min-height: 600px;
 }
 .recipe-hero-photo {
   overflow: hidden;

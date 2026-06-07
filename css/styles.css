@@ -510,6 +510,8 @@ section { padding: 80px 0; }
   border-radius: 0;
   text-decoration: underline;
   text-underline-offset: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: color var(--ease);
 }
 .tag:hover { color: var(--green); }

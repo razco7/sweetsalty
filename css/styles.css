@@ -473,10 +473,10 @@ section { padding: 80px 0; }
 }
 .badge-popular {
   position: absolute; top: 12px; left: 12px;
-  background: var(--accent); color: #fff;
-  font-size: 0.68rem; font-weight: 700;
+  background: var(--purple); color: #fff;
+  font-size: 0.72rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 4px 10px; border-radius: 100px; z-index: 1;
+  padding: 6px 14px; border-radius: 100px; z-index: 1;
 }
 .recipe-card-body {
   padding: 16px 4px 20px; flex: 1;

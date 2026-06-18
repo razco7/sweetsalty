@@ -473,7 +473,7 @@ section { padding: 80px 0; }
 }
 .badge-popular {
   position: absolute; top: 12px; left: 12px;
-  background: var(--purple); color: #fff;
+  background: #ce72dd; color: #fff;
   font-size: 12px; line-height: 12px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.08em;
   padding: 6px 14px; border-radius: 100px; z-index: 1;

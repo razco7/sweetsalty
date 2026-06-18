@@ -442,7 +442,7 @@ section { padding: 80px 0; }
 }
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
 }
 .recipe-card {
@@ -976,9 +976,11 @@ a.tag { cursor: pointer; }
   .team-grid { grid-template-columns: repeat(3, 1fr); }
   .equipment-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .recipe-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 900px) {
+  .recipe-grid { grid-template-columns: repeat(3, 1fr); }
   .recipe-content { grid-template-columns: 1fr; gap: 40px; }
   .recipe-meta-row { flex-wrap: wrap; }
   .recipe-meta-item { min-width: 100px; }
@@ -987,6 +989,7 @@ a.tag { cursor: pointer; }
 }
 
 @media (max-width: 768px) {
+  .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .recipe-hero { grid-template-columns: 1fr; height: auto; }
   .recipe-hero-photo { height: 60vw; }
   .recipe-hero-info { padding: 40px 24px; }
@@ -1014,6 +1017,7 @@ a.tag { cursor: pointer; }
 }
 
 @media (max-width: 500px) {
+  .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .container { padding: 0 16px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .category-links { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }

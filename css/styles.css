@@ -1017,7 +1017,7 @@ a.tag { cursor: pointer; }
 }
 
 @media (max-width: 500px) {
-  .recipe-grid { grid-template-columns: repeat(2, 1fr); }
+  .recipe-grid { grid-template-columns: 1fr; }
   .container { padding: 0 16px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .category-links { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }

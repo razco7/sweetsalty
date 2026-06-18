@@ -166,6 +166,22 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
 const yearEl = document.getElementById('copyright-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+/* ---- Recipe interactive checkboxes ---- */
+document.querySelectorAll('.ingredients-list li').forEach(li => {
+  const cb = document.createElement('input');
+  cb.type = 'checkbox';
+  cb.className = 'recipe-check';
+  li.prepend(cb);
+  cb.addEventListener('change', () => li.classList.toggle('checked', cb.checked));
+});
+
+document.querySelectorAll('.instructions-list li').forEach(li => {
+  li.addEventListener('click', e => {
+    if (e.target.tagName === 'A') return;
+    li.classList.toggle('checked');
+  });
+});
+
 /* ---- Contact form ---- */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

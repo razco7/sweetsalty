@@ -476,7 +476,7 @@ section { padding: 80px 0; }
   background: #ce72dd; color: #fff;
   font-size: 12px; line-height: 12px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 6px 14px; border-radius: 4px; z-index: 1;
+  padding: 6px 8px; border-radius: 4px; z-index: 1;
 }
 .recipe-card-body {
   padding: 16px 4px 20px; flex: 1;

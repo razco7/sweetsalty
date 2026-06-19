@@ -780,7 +780,7 @@ a.tag { cursor: pointer; }
   transition: background 0.15s, border-color 0.15s;
 }
 .recipe-check:checked {
-  background: var(--coral); border-color: var(--coral);
+  background: #222; border-color: #222;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M1 5l3.5 3.5L11 1'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: center; background-size: 11px;
 }

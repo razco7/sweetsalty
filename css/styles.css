@@ -757,7 +757,7 @@ a.tag { cursor: pointer; }
 .recipe-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
 .recipe-content {
   display: grid; grid-template-columns: 1fr 1.7fr;
-  gap: 56px; align-items: start;
+  gap: 88px; align-items: start;
 }
 .recipe-section-title {
   font-size: 1.4rem; margin-bottom: 20px;

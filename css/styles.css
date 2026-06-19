@@ -694,7 +694,7 @@ a.tag { cursor: pointer; }
   margin-bottom: 32px;
 }
 .recipe-hero-tags .tag {
-  color: #1a1a2e;
+  color: #1a1a2e; font-size: 18px; line-height: 26px;
 }
 .recipe-hero-tags .tag:hover { color: var(--green); }
 .recipe-hero-divider {

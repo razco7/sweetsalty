@@ -817,7 +817,7 @@ a.tag { cursor: pointer; }
   font-size: 0.82rem; font-weight: 700;
   flex-shrink: 0; margin-top: 2px;
 }
-.instructions-list li .step-content { padding-top: 6px; line-height: 32px; font-size: 18px; }
+.instructions-list li .step-content { padding-top: 6px; line-height: 32px; font-size: 18px; font-weight: 300; }
 .instructions-list li .step-title {
   display: block; font-weight: 600;
   margin-bottom: 4px;

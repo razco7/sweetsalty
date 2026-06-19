@@ -991,6 +991,7 @@ a.tag { cursor: pointer; }
   .recipe-meta-item { min-width: 100px; }
   .promo-inner { flex-direction: column; gap: 36px; }
   .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+  .recipe-hero-desc { font-size: 24px; line-height: 38px; }
 }
 
 @media (max-width: 768px) {
@@ -998,6 +999,7 @@ a.tag { cursor: pointer; }
   .recipe-hero-photo { height: 60vw; }
   .recipe-hero-info { padding: 40px 24px; }
   .recipe-hero-title { font-size: 36px; line-height: 44px; }
+  .recipe-hero-desc { font-size: 18px; line-height: 28px; }
   .hero { min-height: 80vh; padding: 48px 24px; }
   .hero-title { font-size: clamp(3rem, 14vw, 5rem); }
   .word-box { padding: 8px 32px 12px; }

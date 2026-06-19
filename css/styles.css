@@ -767,7 +767,7 @@ a.tag { cursor: pointer; }
 .ingredients-list li {
   display: flex; align-items: flex-start; gap: 12px;
   padding: 10px 0; border-bottom: 1px solid var(--border);
-  font-size: 0.93rem; line-height: 1.5;
+  font-size: 18px; line-height: 1.5; font-weight: 300;
 }
 
 /* Custom checkbox for recipe interaction */

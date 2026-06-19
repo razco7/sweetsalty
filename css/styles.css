@@ -761,8 +761,6 @@ a.tag { cursor: pointer; }
 }
 .recipe-section-title {
   font-size: 1.4rem; margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--border);
 }
 .ingredients-list li {
   display: flex; align-items: flex-start; gap: 12px;

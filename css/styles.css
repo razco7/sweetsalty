@@ -769,7 +769,7 @@ a.tag { cursor: pointer; }
   padding: 10px 0; border-bottom: 1px solid var(--border);
   font-size: 18px; line-height: 1.5; font-weight: 300;
 }
-.ingredients-list li em { font-size: 18px !important; font-style: normal; }
+.ingredients-list li em { font-size: 18px !important; }
 
 /* Custom checkbox for recipe interaction */
 .recipe-check {

@@ -721,7 +721,7 @@ a.tag { cursor: pointer; }
 .recipe-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px; }
 
 .recipe-the-title {
-  font-size: 48px; line-height: 56px; font-weight: 700;
+  font-size: 72px; line-height: 80px; font-weight: 700;
   color: var(--text); margin-bottom: 32px;
 }
 

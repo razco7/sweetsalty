@@ -674,8 +674,8 @@ a.tag { cursor: pointer; }
   overflow-y: auto;
 }
 .recipe-hero-title {
-  font-size: 56px;
-  line-height: 64px;
+  font-size: 80px;
+  line-height: 96px;
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 20px;
@@ -750,8 +750,8 @@ a.tag { cursor: pointer; }
 }
 .meta-value {
   grid-column: 2; grid-row: 2;
-  font-size: 0.9rem; font-weight: 400;
-  color: var(--text-muted);
+  font-size: 0.9rem; font-weight: 300;
+  color: #222;
   align-self: start;
 }
 .recipe-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }

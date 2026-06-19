@@ -667,6 +667,7 @@ a.tag { cursor: pointer; }
 }
 .recipe-hero-info {
   background-color: var(--recipe-accent, #f5ead8);
+  --recipe-text: color-mix(in oklch, var(--recipe-accent, #f5ead8) 30%, #000);
   padding: 64px 72px;
   display: flex;
   flex-direction: column;
@@ -677,14 +678,14 @@ a.tag { cursor: pointer; }
   font-size: 80px;
   line-height: 96px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--recipe-text);
   margin-bottom: 20px;
 }
 .recipe-hero-desc {
   font-size: 30px;
   line-height: 42px;
   font-weight: 300;
-  color: #2a2a2a;
+  color: var(--recipe-text);
   margin-bottom: 24px;
 }
 .recipe-hero-tags {
@@ -694,25 +695,25 @@ a.tag { cursor: pointer; }
   margin-bottom: 32px;
 }
 .recipe-hero-tags .tag {
-  color: #1a1a2e; font-size: 18px; line-height: 26px;
+  color: var(--recipe-text); font-size: 18px; line-height: 26px;
 }
 .recipe-hero-divider {
   border: none;
-  border-top: 1px solid rgba(0,0,0,0.15);
+  border-top: 1px solid color-mix(in oklch, var(--recipe-accent, #f5ead8) 50%, #000);
   margin: 0 0 24px;
 }
 .recipe-hero-fact-title {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--recipe-text);
   margin-bottom: 6px;
 }
 .recipe-hero-fact-desc {
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
-  color: #2a2a2a;
+  color: var(--recipe-text);
 }
 
 .recipe-page { padding: 60px 0 80px; }

@@ -440,6 +440,9 @@ section { padding: 80px 0; }
 #recipes {
   padding: 72px 0 0;
 }
+#recipes .recipe-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

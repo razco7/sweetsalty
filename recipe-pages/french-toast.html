@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Toast | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #d590c2">
+  <div class="recipe-hero-photo">
+    <img src="../images/66018a4221916c7e9a53dbdc_French-toast.jpg" alt="French Toast">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">French Toast</h1>
+    <p class="recipe-hero-desc">French toast is a classic breakfast dish made by soaking slices of bread in a mixture of eggs and milk, then frying them until golden brown. This simple yet indulgent dish can trace its origins back to ancient times, with variations appearing across cultures. The basic recipe allows for numerous variations, including the addition of spices like cinnamon and nutmeg, as well as toppings like syrup, fruit, whipped cream, and even savory elements.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/breakfast-recipes.html" class="tag">Breakfast</a>
+      <a href="../collection-pages/france-recipes.html" class="tag">France</a>
+      <a href="../collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+      <a href="../collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">What do French people call it?</p>
+    <p class="recipe-hero-fact-desc">While "French toast" is the common name in North America, the dish is known as "pain perdu" in France, which translates to "lost bread." This name reflects the dish's original purpose as a way to use up stale or "lost" bread, preventing waste.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">8 French toasts</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">10 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">10–20 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">20–30 minutes</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Day-old bread</li>
+          <li>Toppings: maple syrup, powdered sugar, fresh fruit, whipped cream</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <ul class="ingredients-list">
+          <li>4 large eggs</li>
+          <li>240ml (1 cup) milk</li>
+          <li>2 tsp vanilla extract</li>
+          <li>1 tbsp (12.5g) sugar (optional)</li>
+          <li>½ tsp ground cinnamon</li>
+          <li>Pinch of salt</li>
+          <li>8 slices of bread (day-old works best)</li>
+          <li>Butter or oil for frying</li>
+          <li>Toppings of choice: maple syrup, powdered sugar, fresh fruit, whipped cream</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Prepare the egg mixture</strong>
+              In a large bowl, whisk together the eggs, milk, vanilla extract, sugar (if using), cinnamon, and a pinch of salt until well combined.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Soak the bread</strong>
+              Dip each slice of bread into the egg mixture, allowing it to soak for a few seconds on each side. The bread should be moistened through but not soggy.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Heat the pan</strong>
+              Heat a large skillet or griddle over medium heat. Add a little butter or oil to lightly coat the surface.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Cook</strong>
+              Place the soaked bread slices onto the hot skillet. Cook for 2–3 minutes on each side, or until each side is golden brown and slightly crispy.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Serve</strong>
+              Serve the French toast hot from the skillet with your choice of toppings: maple syrup, powdered sugar, fresh berries, sliced bananas, or whipped cream.
+            </div>
+          </li>
+        </ol>
+
+        <div class="recipe-notes">
+          <h4>Tips &amp; Notes</h4>
+          <p>Use thick slices of brioche, challah, or French bread (about 2cm thick) for best results. For a savory version, omit the sugar and vanilla and opt for savory toppings like sautéed mushrooms, cheese, or crispy bacon.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Chip Cookies | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #ff9975">
+  <div class="recipe-hero-photo">
+    <img src="../images/65fe8adeef634cea51b280cf_Chocolatechip-cookie.jpg" alt="Chocolate Chip Cookies">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">Chocolate Chip Cookies</h1>
+    <p class="recipe-hero-desc">Chocolate chip cookies are a popular and classic type of cookie that features the incorporation of chocolate chips or chunks into the cookie dough. They are widely loved for their delightful combination of a sweet, buttery dough and the rich, gooey texture of melted chocolate.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+      <a href="../collection-pages/usa-recipes.html" class="tag">USA</a>
+      <a href="../collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+      <a href="../collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">Happy Accident</p>
+    <p class="recipe-hero-fact-desc">Ruth Wakefield intended to make chocolate cookies but ran out of baker's chocolate, so she substituted it with cut-up chunks of semi-sweet chocolate, expecting it to melt and create an all-chocolate cookie. Instead, the chocolate held its shape, and the chocolate chip cookie was born.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">30–40 cookies</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">30 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">12 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">42 minutes</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Parchment paper sheets</li>
+          <li>Good quality baking sheets</li>
+          <li>1 medium size cookie scoop</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <ul class="ingredients-list">
+          <li>281g (2¼ cups) all-purpose flour</li>
+          <li>5g (1 tsp) baking soda</li>
+          <li>3g (½ tsp) salt</li>
+          <li>225g (1 cup / 2 sticks) unsalted butter, softened</li>
+          <li>150g (¾ cup) granulated sugar</li>
+          <li>150g packed (¾ cup) brown sugar</li>
+          <li>2 large eggs, at room temperature</li>
+          <li>5g (1 tsp) vanilla extract</li>
+          <li>340g (2 cups) semisweet chocolate chips</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Preheat</strong>
+              Preheat your oven to 350°F (175°C). Line baking sheets with parchment paper.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Combine sugars</strong>
+              In a large mixing bowl, combine the melted butter, brown sugar, and granulated sugar. Beat until well mixed and smooth.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Add eggs</strong>
+              Add the vanilla extract and eggs to the sugar mixture, beating well after each addition.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Mix dry ingredients</strong>
+              Combine the flour, baking soda, and salt in a separate bowl. Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Be careful not to overmix.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Fold in chocolate</strong>
+              Fold in the chocolate chips until evenly distributed throughout the dough.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Scoop</strong>
+              Scoop tablespoon-sized balls of dough onto the prepared baking sheet, leaving about 2 inches between each cookie to allow for spreading.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Bake</strong>
+              Bake for 8–10 minutes, or until the edges are lightly browned but the center is still soft.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Cool</strong>
+              Cool the cookies on the baking sheet for 5 minutes before transferring to a wire rack to cool completely.
+            </div>
+          </li>
+        </ol>
+
+        <div class="recipe-notes">
+          <h4>Tips &amp; Notes</h4>
+          <p>Cooling the cookies in the refrigerator for a couple of hours or overnight will prevent them from spreading too much when baking.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

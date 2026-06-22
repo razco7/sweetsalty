@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Croissant | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #dcb2f7">
+  <div class="recipe-hero-photo">
+    <img src="../images/6601b52f41da3aef04d7d4d3_Croissant.jpg" alt="Croissant">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">Croissant</h1>
+    <p class="recipe-hero-desc">Croissants are a popular French pastry known for their flaky, buttery texture and crescent shape. Traditional croissant dough is made from flour, water, yeast, salt, sugar, and butter, which is folded and rolled multiple times to create layers. They can be enjoyed plain or filled with various ingredients such as chocolate, almond paste, or ham and cheese, and are a staple in French bakeries worldwide.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/pastry-recipes.html" class="tag">Pastry</a>
+      <a href="../collection-pages/france-recipes.html" class="tag">France</a>
+      <a href="../collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+      <a href="../collection-pages/moderate-level-recipes.html" class="tag">Moderate</a>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">Origins</p>
+    <p class="recipe-hero-fact-desc">Contrary to popular belief, croissants did not originate in France. They actually have Austrian roots and were brought to France by an Austrian artillery officer during the late 17th century.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">12–16 croissants</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">2–3 hours</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">15–20 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">3 hrs 20 min</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Parchment paper sheets</li>
+          <li>Good quality baking sheets</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <ul class="ingredients-list">
+          <li>4 cups (500g) all-purpose flour</li>
+          <li>¼ cup (50g) granulated sugar</li>
+          <li>2 tsp (7g) active dry yeast</li>
+          <li>1¼ cups (300ml) warm milk</li>
+          <li>1 tsp (6g) salt</li>
+          <li>1¼ cups (280g) unsalted butter, cold</li>
+          <li>1 egg, beaten (for egg wash)</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Dough preparation</strong>
+              Combine warm milk, sugar, and yeast. Let sit for 5 minutes until frothy. Add flour and salt, stir until a rough dough forms. Knead for 5–7 minutes until smooth and elastic. Shape into a rectangle, wrap in plastic, refrigerate for 30 minutes.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Butter block</strong>
+              Cut cold butter into thin slices and arrange into a rectangle between parchment paper. Use a rolling pin to flatten to about ¼ inch thick. Refrigerate for 10–15 minutes until firm but pliable.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Laminating the dough</strong>
+              Roll out the chilled dough into a rectangle slightly larger than the butter block. Place the butter block in the center and fold the dough sides over to encase the butter. Roll out into a long rectangle, then fold into thirds like a letter. Wrap and refrigerate for 30 minutes. Repeat this rolling and folding process two more times, chilling between each fold.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Shaping</strong>
+              Roll out the dough into a large rectangle about ¼ inch thick. Cut into triangles, then make a small slit in the base of each triangle. Roll each triangle tightly from the base, tucking the tip underneath. Place on a parchment-lined baking sheet, leaving space between them.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Final proofing and baking</strong>
+              Cover with a clean kitchen towel and let proof at room temperature for 1–2 hours until doubled in size. Preheat oven to 375°F (190°C). Brush with egg wash and bake for 15–20 minutes until golden brown and flaky. Cool on a wire rack before serving.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

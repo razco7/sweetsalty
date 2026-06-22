@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gingerbread Cookies | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #ffa26e">
+  <div class="recipe-hero-photo">
+    <img src="../images/65fee50498ab5f81e15de6e4_Gingerbread.jpg" alt="Gingerbread Cookies">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">Gingerbread Cookies</h1>
+    <p class="recipe-hero-desc">Gingerbread cookies are a beloved holiday tradition, renowned for their warm spices and festive shapes. They often feature a firm yet slightly chewy texture, perfect for decorating with colorful icing and candies. With origins dating back centuries, these cookies hold cultural significance worldwide, symbolizing the joy and spirit of the holiday season.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/cookie-recipes.html" class="tag">Cookie</a>
+      <a href="../collection-pages/germany-recipes.html" class="tag">Germany</a>
+      <a href="../collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+      <a href="../collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">Medieval Origins</p>
+    <p class="recipe-hero-fact-desc">Gingerbread dates back to medieval Europe, where it was initially a luxurious treat enjoyed by nobility. It was often shaped into elaborate designs and served at special occasions such as weddings and religious ceremonies.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">30–40 cookies</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">20–30 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">8–10 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">28–40 minutes</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Parchment paper sheets</li>
+          <li>Good quality baking sheets</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <ul class="ingredients-list">
+          <li>3 cups (375g) all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>¼ tsp salt</li>
+          <li>1 tbsp ground ginger</li>
+          <li>1½ tsp ground cinnamon</li>
+          <li>½ tsp ground cloves</li>
+          <li>½ cup (115g) unsalted butter, softened</li>
+          <li>½ cup (100g) brown sugar, packed</li>
+          <li>1 large egg</li>
+          <li>½ cup (120ml) molasses</li>
+          <li>Royal icing (optional, for decorating)</li>
+          <li>Assorted candies and sprinkles (optional, for decorating)</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Cream butter and sugar</strong>
+              In a large bowl, beat together the butter and brown sugar until light and fluffy. Add the molasses and egg, mixing until well combined.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Combine dry ingredients</strong>
+              In another bowl, whisk together the flour, baking soda, salt, ginger, cinnamon, and cloves.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Make the dough</strong>
+              Gradually add the dry ingredients to the wet ingredients, mixing until the dough comes together. You may need to knead it by hand to fully incorporate the flour.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Chill the dough</strong>
+              Divide the dough in half, shape into disks, and wrap in plastic wrap. Chill in the refrigerator for at least 2 hours or overnight.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Preheat and roll</strong>
+              When ready to bake, preheat your oven to 350°F (175°C). Line baking sheets with parchment paper. On a lightly floured surface, roll out one disk to about ¼ inch (6mm) thickness. Use cookie cutters to cut into shapes.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Bake</strong>
+              Bake for 8–10 minutes or until the edges are just starting to brown. Let cool on the baking sheet for a few minutes before transferring to a wire rack.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Decorate</strong>
+              Once cooled, decorate with royal icing and assorted candies as desired.
+            </div>
+          </li>
+        </ol>
+
+        <div class="recipe-notes">
+          <h4>Tips &amp; Notes</h4>
+          <p>The dough can be made ahead and kept in the refrigerator for a few days or frozen for longer storage.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

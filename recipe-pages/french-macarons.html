@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Macarons | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #fcbad7">
+  <div class="recipe-hero-photo">
+    <img src="../images/65fec25e7c4899eab7a0d13d_Macaroon.jpg" alt="French Macarons">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">French Macarons</h1>
+    <p class="recipe-hero-desc">French macarons, distinct from macaroons, are delicate, meringue-based sandwich cookies known for their smooth tops, ruffled circumference (referred to as the "foot"), and rich filling. These elegant pastries are celebrated for their variety of vibrant colors and flavors, making them not only a delight to taste but also a feast for the eyes.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/pastry-recipes.html" class="tag">Pastry</a>
+      <a href="../collection-pages/france-recipes.html" class="tag">France</a>
+      <a href="../collection-pages/sweet-recipes.html" class="tag">Sweet</a>
+      <span class="tag">Advanced</span>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">Royal Beginnings</p>
+    <p class="recipe-hero-fact-desc">The macaron is believed to have been brought to France from Italy in the 16th century by Catherine de Medici's Italian pastry chefs when she married King Henry II of France. Originally, macarons were simple cookies made of almond flour, sugar, and egg whites, without any filling.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">20–25 macarons</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">1–2 hours</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">15–18 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">1.5–3 hours</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Parchment paper sheets</li>
+          <li>Good quality baking sheets</li>
+          <li>Rubber spatula</li>
+          <li>Piping bag</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <p class="ingredients-group-title">For the macaron shells</p>
+        <ul class="ingredients-list">
+          <li>1 cup (100g) almond flour</li>
+          <li>1¾ cups (200g) confectioners' sugar</li>
+          <li>3 large egg whites, at room temperature</li>
+          <li>¼ cup (50g) granulated sugar</li>
+          <li>½ tsp (2.5ml) vanilla extract</li>
+          <li>Food coloring (optional)</li>
+        </ul>
+        <p class="ingredients-group-title">For the filling</p>
+        <ul class="ingredients-list">
+          <li>¾ cup (170g) unsalted butter, softened</li>
+          <li>2 cups (250g) confectioners' sugar, sifted</li>
+          <li>1 tsp (5ml) vanilla extract</li>
+          <li>Food coloring (optional)</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Sift and prepare</strong>
+              Sift the almond flour and confectioners' sugar together into a large bowl. Discard any large pieces.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Beat egg whites</strong>
+              In a separate bowl, beat the egg whites with an electric mixer until they begin to rise and hold their shape. Gradually add the granulated sugar and beat until glossy and stiff peaks form. Add the vanilla extract and food coloring (if using) during the last moments of beating.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Fold the batter</strong>
+              Fold the sifted almond flour mixture into the beaten egg whites with a rubber spatula, gently, until the mixture is smooth and shiny.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Pipe and rest</strong>
+              Pipe the batter onto parchment-lined baking sheets, forming circles about 1 inch (2.5cm) in diameter. Tap the baking sheet firmly on the counter to release air bubbles. Let rest for 30 minutes to 1 hour until a skin forms on the macarons and the tops become dry to the touch.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Bake</strong>
+              Preheat your oven to 300°F (150°C) and bake for 15–18 minutes, until they rise and the "feet" have formed. Let cool completely before removing from the baking sheet.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Make the filling</strong>
+              Beat the softened butter until light and fluffy. Gradually add the confectioners' sugar and beat until smooth. Add the vanilla extract and food coloring (if using).
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Assemble</strong>
+              Pair up macaron shells of similar size and spread or pipe a dollop of filling on one shell. Sandwich together, gently pressing so the filling spreads to the edges. Refrigerate filled macarons for at least 24 hours before serving.
+            </div>
+          </li>
+        </ol>
+
+        <div class="recipe-notes">
+          <h4>Tips &amp; Notes</h4>
+          <p>Making macarons requires patience and practice, so don't be discouraged if your first batch isn't perfect.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-root="..">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza | Sweet / Salty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=10">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../images/66438e283efc19061bbfcc5c_Logo_sweet_salty.svg" alt="Sweet / Salty">
+    </a>
+    <div class="nav-right">
+      <button class="btn-search" id="searchBtn" aria-label="Search">
+        <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="Search">
+      </button>
+      <div class="nav-links">
+        <a href="../all-recipes.html">All recipes</a>
+        <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+        <a href="../collection-pages/france-recipes.html">France</a>
+        <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../all-recipes.html">All recipes</a>
+  <a href="../collection-pages/cookie-recipes.html">Cookies</a>
+  <a href="../collection-pages/france-recipes.html">France</a>
+  <a href="../collection-pages/pastry-recipes.html">Pastry</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://www.buymeacoffee.com/sweetsalty" target="_blank" class="btn-coffee">Buy us a coffee</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <img src="../images/6636713ea941c086ea0d9e9c_Search1.svg" alt="" style="width:20px;opacity:0.4">
+      <input type="text" id="searchInput" placeholder="Search recipes…">
+      <button class="btn-close" id="searchClose">
+        <img src="../images/6637469049a92319dde7db72_Close.svg" alt="Close">
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="recipe-hero" style="--recipe-accent: #ffcc1d">
+  <div class="recipe-hero-photo">
+    <img src="../images/6633a6f13cfd4836d2593f35_Pizza.jpg" alt="Pizza">
+  </div>
+  <div class="recipe-hero-info">
+    <h1 class="recipe-hero-title">Pizza</h1>
+    <p class="recipe-hero-desc">Universally beloved, pizza is a dish that originated in Italy, specifically from Naples. It is a versatile meal that consists primarily of a round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients such as meats, vegetables, and condiments. Pizza's roots trace back to ancient times, but the modern pizza developed in Naples during the late 18th to early 19th century.</p>
+    <div class="recipe-hero-tags">
+      <a href="../collection-pages/pastry-recipes.html" class="tag">Pastry</a>
+      <a href="../collection-pages/italy-recipes.html" class="tag">Italy</a>
+      <a href="../collection-pages/salty-recipes.html" class="tag">Salty</a>
+      <a href="../collection-pages/easy-level-recipes.html" class="tag">Easy</a>
+    </div>
+    <hr class="recipe-hero-divider">
+    <p class="recipe-hero-fact-title">Margherita Pizza</p>
+    <p class="recipe-hero-fact-desc">In 1889, to honor Queen Margherita of Savoy, the Neapolitan pizzamaker Raffaele Esposito created the "Pizza Margherita," topped with tomatoes, mozzarella, and basil, to represent the national colors of Italy as shown on the Italian flag.</p>
+  </div>
+</div>
+
+<main class="recipe-page">
+  <div class="container">
+
+    <h2 class="recipe-the-title">The Recipe</h2>
+
+    <div class="recipe-meta-row">
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb1ee9588b889daac225_cookie_1.svg" alt="">
+        <span class="meta-label">Yield</span>
+        <span class="meta-value">Two 12-inch pizzas</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb44c65d4b80b2cead23_mixer_1.svg" alt="">
+        <span class="meta-label">Prep Time</span>
+        <span class="meta-value">20 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65fc614983da65f8265377c9_oven.svg" alt="">
+        <span class="meta-label">Baking Time</span>
+        <span class="meta-value">10–15 minutes</span>
+      </div>
+      <div class="recipe-meta-item">
+        <img src="../images/65edcb673aca131160028079_time_1.svg" alt="">
+        <span class="meta-label">Total Time</span>
+        <span class="meta-value">3 hrs 40 min</span>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">What you'll need</h3>
+        <ul class="ingredients-list">
+          <li>Mixing bowls</li>
+          <li>Spoon or dough scraper</li>
+          <li>Pizza stone or baking sheet</li>
+          <li>Pizza peel or flat baking tray (if using a pizza stone)</li>
+        </ul>
+
+        <h3 class="recipe-section-title">Ingredients</h3>
+        <p class="ingredients-group-title">For the pizza dough</p>
+        <ul class="ingredients-list">
+          <li>500g (about 4 cups) pizza flour</li>
+          <li>300ml (about 1⅓ cups) warm water</li>
+          <li>2 tsp dry yeast</li>
+          <li>2 tsp salt</li>
+          <li>1 tbsp olive oil</li>
+        </ul>
+        <p class="ingredients-group-title">For the sauce</p>
+        <ul class="ingredients-list">
+          <li>400g (about 1¾ cups) canned crushed tomatoes</li>
+          <li>2 cloves garlic, minced</li>
+          <li>Salt and pepper to taste</li>
+          <li>1 tbsp olive oil</li>
+          <li>½ tsp sugar (optional)</li>
+        </ul>
+        <p class="ingredients-group-title">Toppings</p>
+        <ul class="ingredients-list">
+          <li>200g (about 2 cups) fresh mozzarella cheese, sliced or torn</li>
+          <li>Fresh basil leaves</li>
+          <li>Extra virgin olive oil for drizzling</li>
+        </ul>
+      </div>
+
+      <div class="recipe-section">
+        <h3 class="recipe-section-title">Instructions</h3>
+        <ol class="instructions-list">
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Make the pizza dough</strong>
+              Combine warm water and yeast, let sit for 5 minutes until frothy. Add flour, salt, and olive oil, mix until a dough begins to form. Knead for about 10 minutes until smooth and elastic. Place in a lightly oiled bowl, cover with a damp cloth, and let rise in a warm place for 1–2 hours until doubled in size.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Prepare the sauce</strong>
+              Heat olive oil in a saucepan over medium heat. Add minced garlic and sauté for about 1 minute until fragrant. Add crushed tomatoes, salt, pepper, and sugar (if using). Simmer for about 20 minutes until the sauce has thickened.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Assemble and bake</strong>
+              Preheat oven to 250°C (480°F). If using a pizza stone, preheat it in the oven as well. Punch down the risen dough and divide into two balls. Roll each out into a thin circle, about 30cm (12 inches). Spread a thin layer of tomato sauce over the dough. Arrange mozzarella cheese evenly on top. Bake for 10–15 minutes until the crust is golden and cheese is bubbly.
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <strong class="step-title">Serve</strong>
+              Remove from the oven and immediately add fresh basil leaves and a drizzle of extra virgin olive oil. Slice and serve immediately.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html"><img src="../images/65f2c647d2a942ddb7dd4a9a_sweet_salty_logo.svg" alt="Sweet / Salty"></a>
+        <p>We are all about cookies, pastry, desserts and everything delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../all-recipes.html">All recipes</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="footer-newsletter-desc">Subscribe for new recipes</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-success">Thank you! Your submission has been received!</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Sweet / Salty. All rights reserved</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="../images/668fe124e3b840afc42ed541_Facebook.svg" alt="Facebook"></a>
+        <a href="https://instagram.com/sweet_salty_recipes" target="_blank" aria-label="Instagram"><img src="../images/668fe138385098553f4c95d9_Insta.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js?v=3"></script>
+</body>
+</html>

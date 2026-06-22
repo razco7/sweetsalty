@@ -762,6 +762,9 @@ a.tag { cursor: pointer; }
 .recipe-section-title {
   font-size: 1.4rem; margin-bottom: 20px;
 }
+.ingredients-list + .recipe-section-title {
+  margin-top: 48px;
+}
 .ingredients-list li {
   display: flex; align-items: flex-start; gap: 12px;
   padding: 10px 0;

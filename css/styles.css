@@ -643,6 +643,7 @@ a.tag { cursor: pointer; }
 .page-header {
   padding: 64px 0 52px;
 }
+.page-header + section { padding-top: 0; }
 .page-header h1 {
   font-size: 48px; line-height: 64px; font-weight: 700;
   margin-bottom: 12px;

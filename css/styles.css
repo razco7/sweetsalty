@@ -229,7 +229,7 @@ section { padding: 80px 0; }
   transition: background var(--ease);
   color: var(--text);
 }
-.search-result-item:hover { background: #ffeaea; }
+.search-result-item:hover { background: #fff5f5; }
 .search-result-item img {
   width: 52px; height: 52px;
   border-radius: 8px; object-fit: cover; flex-shrink: 0;

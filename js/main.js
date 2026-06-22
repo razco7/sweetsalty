@@ -187,12 +187,34 @@ document.querySelectorAll('.instructions-list li').forEach(li => {
   });
 });
 
-/* ---- Contact form ---- */
+/* ---- Contact form (Formspree) ---- */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const success = document.getElementById('formSuccess');
-    if (success) { success.classList.add('show'); contactForm.style.display = 'none'; }
+    const btn = contactForm.querySelector('.btn-submit');
+    const successEl = document.getElementById('formSuccess');
+    const errorEl = document.getElementById('formError');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://formspree.io/f/xvzjogvk', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        if (successEl) successEl.classList.add('show');
+      } else {
+        if (errorEl) errorEl.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+      }
+    } catch {
+      if (errorEl) errorEl.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
   });
 }

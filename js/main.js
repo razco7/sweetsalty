@@ -173,6 +173,11 @@ document.querySelectorAll('.ingredients-list li').forEach(li => {
   cb.className = 'recipe-check';
   li.prepend(cb);
   cb.addEventListener('change', () => li.classList.toggle('checked', cb.checked));
+  li.addEventListener('click', e => {
+    if (e.target === cb) return;
+    cb.checked = !cb.checked;
+    li.classList.toggle('checked', cb.checked);
+  });
 });
 
 document.querySelectorAll('.instructions-list li').forEach(li => {

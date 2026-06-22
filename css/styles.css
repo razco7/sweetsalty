@@ -657,9 +657,7 @@ a.tag { cursor: pointer; }
 .recipe-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 85svh;
-  min-height: 500px;
-  max-height: 900px;
+  min-height: min(85svh, 900px);
 }
 .recipe-hero-photo {
   overflow: hidden;
@@ -675,7 +673,6 @@ a.tag { cursor: pointer; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto;
 }
 .recipe-hero-title {
   font-size: 80px;

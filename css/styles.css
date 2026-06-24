@@ -453,6 +453,7 @@ section { padding: 80px 0; }
 }
 @media (min-width: 1920px) {
   .recipe-grid { grid-template-columns: repeat(6, 1fr); }
+  .recipe-hero { min-height: 0; height: 80svh; }
 }
 .recipe-card {
   background: var(--bg);

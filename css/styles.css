@@ -282,7 +282,7 @@ section { padding: 80px 0; }
   letter-spacing: -2px;
 }
 .hero-title .word { display: block; }
-.word-container { display: block; margin-top: 12px; }
+.word-container { display: block; margin-top: 4px; }
 .word-divider { display: none; }
 .word-box {
   display: inline-block;

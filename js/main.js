@@ -103,6 +103,14 @@ if (navToggle && mobileNav) {
   navToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
 }
 
+const mobileDropdownLabel = document.querySelector('.mobile-nav .mobile-dropdown-label');
+if (mobileDropdownLabel) {
+  mobileDropdownLabel.addEventListener('click', () => {
+    mobileDropdownLabel.classList.toggle('open');
+    mobileDropdownLabel.nextElementSibling.classList.toggle('open');
+  });
+}
+
 /* ---- Hero rotating text (mover approach, mirrors Webflow) ---- */
 const wordMover = document.querySelector('.word-mover');
 if (wordMover) {

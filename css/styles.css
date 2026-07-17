@@ -740,8 +740,8 @@ a.tag { cursor: pointer; }
   margin-bottom: 6px;
 }
 .recipe-hero-fact-desc {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 300;
   color: var(--recipe-text);
 }

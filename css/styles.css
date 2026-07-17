@@ -666,13 +666,14 @@ a.tag { cursor: pointer; }
 /* ==========================================
    404 PAGE
    ========================================== */
+body:has(.notfound-section) { padding-top: 0; }
 .notfound-section {
   position: relative;
-  height: calc(100svh - var(--nav-height));
+  height: 100svh;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-end;
   overflow: hidden;
 }
 .notfound-bg {
@@ -681,43 +682,38 @@ a.tag { cursor: pointer; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
   z-index: 0;
-}
-.notfound-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
 }
 .notfound-info {
   position: relative;
   z-index: 2;
-  max-width: 560px;
-  padding: 0 24px;
+  max-width: 480px;
+  padding: 0 96px 0 24px;
+  text-align: left;
 }
 .notfound-title {
   font-size: 64px;
   line-height: 72px;
   font-weight: 700;
-  color: #fff;
+  color: #222;
   margin-bottom: 20px;
 }
 .notfound-desc {
   font-size: 22px;
   line-height: 32px;
   font-weight: 300;
-  color: #fff;
+  color: #222;
   margin-bottom: 24px;
 }
 .notfound-desc a {
-  color: #fff;
+  color: #222;
   text-decoration: underline;
 }
 .notfound-link {
   font-size: 18px;
   font-weight: 400;
-  color: #fff;
+  color: #222;
   text-decoration: underline;
 }
 
@@ -1114,6 +1110,21 @@ a.tag { cursor: pointer; }
 }
 
 @media (max-width: 768px) {
+  .notfound-section {
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-start;
+  }
+  .notfound-bg {
+    position: relative;
+    height: 50vh;
+    object-position: center;
+  }
+  .notfound-info {
+    background: #ffd6d6;
+    max-width: 100%;
+    padding: 40px 24px;
+  }
   .notfound-title { font-size: 40px; line-height: 48px; }
   .notfound-desc { font-size: 18px; line-height: 28px; }
   .recipe-hero { grid-template-columns: 1fr; height: auto; }

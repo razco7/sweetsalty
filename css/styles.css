@@ -688,8 +688,8 @@ body:has(.notfound-section) { padding-top: 0; }
 .notfound-info {
   position: relative;
   z-index: 2;
-  max-width: 480px;
-  padding: 0 96px 0 24px;
+  max-width: 560px;
+  padding: 0 64px 0 24px;
   text-align: left;
 }
 .notfound-title {

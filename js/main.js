@@ -23,6 +23,7 @@ const ALL_RECIPES = [
   { title: 'Pizza', img: 'images/6633a6f13cfd4836d2593f35_Pizza.jpg', desc: 'Universally beloved dish that originated in Italy, specifically from Naples', tags: ['Pastry','Italy','Salty','Easy'], page: 'recipe-pages/pizza.html', popular: true },
   { title: 'New York Cheesecake', img: 'images/662b78c8d52e59c71dd74e35_NY-cheesecake.jpg', desc: 'Rich, creamy, & dense dessert that is beloved for its smooth consistency & elegance', tags: ['Cake','USA','Sweet','Moderate'], page: 'recipe-pages/new-york-cheesecake.html', popular: false },
   { title: 'Croissant', img: 'images/6601b52f41da3aef04d7d4d3_Croissant.jpg', desc: 'Flaky, buttery pastry known for its crescent shape, an emblem of French cuisine', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/croissant.html', popular: false },
+  { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Delicate crescent-shaped shortbread cookies rolled in vanilla sugar, an Austrian Christmas classic', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false },
 ];
 
 const TAG_LINKS = {

@@ -8,7 +8,7 @@ function p(path) { return ROOT + '/' + path; }
 const ALL_RECIPES = [
   { title: "Savory Libyan Ka'ak", img: 'images/66d8046f1a2bf9c9c828c40d_Kaak.jpg', desc: 'Traditional ring-shaped cookies that hold a special place in Libyan cuisine', tags: ['Cookie','Middle East','Salty','Moderate'], page: 'recipe-pages/savory-libyan-kaak.html', popular: false },
   { title: 'Biscotti', img: 'images/66938ab052591b8b1e3baa47_Biscotti.jpg', desc: 'Traditional Italian cookie known for its crunchy texture & long shelf life', tags: ['Cookie','Italy','Sweet','Moderate'], page: 'recipe-pages/biscotti.html', popular: false },
-  { title: 'Italian S Cookies', img: 'images/italian-s-cookies.jpg', desc: 'Elegant S-shaped butter cookies from northern Italy, lightly perfumed with lemon and vanilla', tags: ['Cookie','Italy','Sweet','Easy'], page: 'recipe-pages/italian-s-cookies.html', popular: false },
+  { title: 'Italian S Cookies', img: 'images/italian-s-cookies.jpg', desc: 'Elegant S-shaped butter cookies from northern Italy, lightly perfumed with lemon and vanilla', tags: ['Cookie','Italy','Sweet','Easy'], page: 'recipe-pages/italian-s-cookies.html', popular: false, date: '2026-07-01' },
   { title: 'Muhallebi', img: 'images/670d4b1d02bc62ddc06a8206_Muhallebi.jpg', desc: 'Creamy, milk-based dessert often garnished with nuts and fruit syrups', tags: ['Dessert','Middle East','Sweet','Easy'], page: 'recipe-pages/muhallebi.html', popular: false },
   { title: 'Crêpe', img: 'images/67080587dcf7620cb0970ba7_crepe.jpg', desc: 'A thin, delicate pancake that originated in the Brittany region of France', tags: ['Breakfast','France','Sweet','Easy'], page: 'recipe-pages/crepe.html', popular: false },
   { title: 'Chocolate Soufflé', img: 'images/66abcf08878b3e806066e4e5_chocolate-souffle.jpg', desc: 'Popular and iconic variation of the soufflé, rich flavor and airy texture', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/chocolate-souffle.html', popular: false },
@@ -23,7 +23,7 @@ const ALL_RECIPES = [
   { title: 'Pizza', img: 'images/6633a6f13cfd4836d2593f35_Pizza.jpg', desc: 'Universally beloved dish that originated in Italy, specifically from Naples', tags: ['Pastry','Italy','Salty','Easy'], page: 'recipe-pages/pizza.html', popular: true },
   { title: 'New York Cheesecake', img: 'images/662b78c8d52e59c71dd74e35_NY-cheesecake.jpg', desc: 'Rich, creamy, & dense dessert that is beloved for its smooth consistency & elegance', tags: ['Cake','USA','Sweet','Moderate'], page: 'recipe-pages/new-york-cheesecake.html', popular: false },
   { title: 'Croissant', img: 'images/6601b52f41da3aef04d7d4d3_Croissant.jpg', desc: 'Flaky, buttery pastry known for its crescent shape, an emblem of French cuisine', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/croissant.html', popular: false },
-  { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Delicate crescent-shaped shortbread cookies rolled in vanilla sugar, an Austrian Christmas classic', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false },
+  { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Delicate crescent-shaped shortbread cookies rolled in vanilla sugar, an Austrian Christmas classic', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false, date: '2026-08-29' },
 ];
 
 const TAG_LINKS = {
@@ -47,14 +47,22 @@ const TAG_LINKS = {
 };
 
 /* ---- Recipe grid rendering (collection & all-recipes pages) ---- */
+const NEW_BADGE_DAYS = 30;
+function isNewRecipe(r) {
+  if (!r.date) return false;
+  const daysSince = (Date.now() - new Date(r.date + 'T00:00:00')) / 86400000;
+  return daysSince >= 0 && daysSince <= NEW_BADGE_DAYS;
+}
+
 function recipeCardHTML(r) {
   const href = r.page ? p(r.page) : '#';
-  const badge = r.popular ? '<span class="badge-popular">Popular Recipe</span>' : '';
+  const popularBadge = r.popular ? '<span class="badge-popular">Popular Recipe</span>' : '';
+  const newBadge = isNewRecipe(r) ? '<span class="badge-new">New!</span>' : '';
   const tags = r.tags.map(t => `<a href="${p(TAG_LINKS[t])}" class="tag">${t}</a>`).join('');
   const imgTag = `<img src="${p(r.img)}" alt="${r.title}">`;
   const imgWrap = r.page
-    ? `<a href="${href}" class="recipe-card-img">${badge}${imgTag}</a>`
-    : `<div class="recipe-card-img">${badge}${imgTag}</div>`;
+    ? `<a href="${href}" class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</a>`
+    : `<div class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</div>`;
   const titleHTML = r.page ? `<a href="${href}">${r.title}</a>` : r.title;
   return `
     <article class="recipe-card">
@@ -69,7 +77,15 @@ function recipeCardHTML(r) {
 
 document.querySelectorAll('.recipe-grid[data-tag]').forEach(grid => {
   const tag = grid.dataset.tag;
-  const list = tag === 'All' ? ALL_RECIPES : ALL_RECIPES.filter(r => r.tags.includes(tag));
+  const list = (tag === 'All' ? ALL_RECIPES.slice() : ALL_RECIPES.filter(r => r.tags.includes(tag)));
+  // New recipes float to the top, most recent first; everything else keeps its original order.
+  list.sort((a, b) => {
+    const aNew = isNewRecipe(a), bNew = isNewRecipe(b);
+    if (aNew && bNew) return new Date(b.date) - new Date(a.date);
+    if (aNew) return -1;
+    if (bNew) return 1;
+    return 0;
+  });
   grid.innerHTML = list.map(recipeCardHTML).join('');
 });
 
@@ -173,22 +189,6 @@ if (wordMover) {
     }
   }, 2600);
 }
-
-/* ---- Recipe tag overflow: hide last tag until all fit ---- */
-function fitRecipeTags() {
-  document.querySelectorAll('.recipe-tags').forEach(container => {
-    const tags = Array.from(container.querySelectorAll('.tag'));
-    // Reset visibility
-    tags.forEach(t => t.style.display = '');
-    // Hide from the end until nothing overflows
-    for (let i = tags.length - 1; i >= 0; i--) {
-      if (container.scrollWidth <= container.clientWidth) break;
-      tags[i].style.display = 'none';
-    }
-  });
-}
-fitRecipeTags();
-window.addEventListener('resize', fitRecipeTags);
 
 /* ---- Newsletter forms ---- */
 document.querySelectorAll('.newsletter-form').forEach(form => {

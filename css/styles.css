@@ -439,6 +439,7 @@ section { padding: 80px 0; }
 }
 .btn-browse-all:hover { background: var(--accent); }
 .btn-browse-all img { width: 14px; filter: invert(1); transform: rotate(-90deg); }
+.recipes-see-all { display: flex; justify-content: center; margin-top: 40px; }
 
 
 /* ==========================================

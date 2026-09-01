@@ -1102,6 +1102,8 @@ body:has(.notfound-section) { padding-top: 0; }
 }
 
 @media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
   .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .recipe-content { grid-template-columns: 1fr; gap: 40px; }
   .recipe-meta-row { flex-wrap: wrap; }

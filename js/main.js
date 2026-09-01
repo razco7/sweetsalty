@@ -59,7 +59,7 @@ function recipeCardHTML(r) {
   const popularBadge = r.popular ? '<span class="badge-popular">Popular Recipe</span>' : '';
   const newBadge = isNewRecipe(r) ? '<span class="badge-new">New!</span>' : '';
   const tags = r.tags.map(t => `<a href="${p(TAG_LINKS[t])}" class="tag">${t}</a>`).join('');
-  const imgTag = `<img src="${p(r.img)}" alt="${r.title}">`;
+  const imgTag = `<img src="${p(r.img)}" alt="${r.title}" loading="lazy" width="800" height="800">`;
   const imgWrap = r.page
     ? `<a href="${href}" class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</a>`
     : `<div class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</div>`;

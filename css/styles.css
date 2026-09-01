@@ -469,13 +469,12 @@ section { padding: 80px 0; }
 .btn-browse-all {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--text); color: #fff;
-  padding: 10px 20px; border-radius: 100px;
+  padding: 16px 28px; border-radius: 100px;
   font-size: 14px; font-weight: 500;
   white-space: nowrap;
   transition: background var(--ease);
 }
 .btn-browse-all:hover { background: var(--accent); }
-.btn-browse-all img { width: 14px; filter: invert(1); transform: rotate(-90deg); }
 .recipes-see-all { display: flex; justify-content: center; margin-top: 40px; }
 
 

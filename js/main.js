@@ -165,13 +165,15 @@ if (wordMover) {
   const dur = 380;
   let current = 0;
 
-  // Use getBoundingClientRect for sub-pixel accuracy — offsetHeight rounds
-  // to integers which causes 1-2px bleed from the previous word at the top
+  // CSS already sets an approximate word-box height so the first word paints
+  // immediately with no JS dependency (better LCP). Use getBoundingClientRect
+  // here for sub-pixel accuracy — offsetHeight rounds to integers which
+  // causes 1-2px bleed from the previous word at the top — and correct the
+  // CSS value now that the font has actually loaded and laid out.
   const gap = 8;
   const slotH = slots[0].getBoundingClientRect().height;
   const step = slotH + gap;
   wordBox.style.height = slotH + 'px';
-  wordMover.style.opacity = '1';
 
   setInterval(() => {
     current++;

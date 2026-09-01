@@ -350,13 +350,13 @@ section { padding: 80px 0; }
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
+  height: 163px;
 }
 .word-mover {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  opacity: 0;
 }
 .rotating-word {
   color: var(--coral);
@@ -1111,6 +1111,7 @@ body:has(.notfound-section) { padding-top: 0; }
    ========================================== */
 @media (max-width: 1440px) {
   .hero-title { font-size: 96px; line-height: 92px; }
+  .word-box { height: 140px; }
   .collection-links a, .collection-sep { font-size: 50px; line-height: 66px; }
   .what-is-body { font-size: 44px; line-height: 60px; }
   .what-is-label { font-size: 20px; line-height: 32px; }
@@ -1127,6 +1128,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
   .recipe-grid { grid-template-columns: repeat(3, 1fr); }
   .hero-title { font-size: 80px; line-height: 80px; }
+  .word-box { height: 128px; }
   .collection-links a, .collection-sep { font-size: 40px; line-height: 56px; }
   .what-is-body { font-size: 36px; line-height: 52px; }
   .what-is-label { font-size: 18px; line-height: 28px; }
@@ -1190,7 +1192,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .instructions-list li .step-content { font-size: 16px; line-height: 26px; }
   .hero { min-height: 80vh; padding: 48px 24px; }
   .hero-title { font-size: 64px; line-height: 72px; }
-  .word-box { padding: 8px 32px 12px; }
+  .word-box { padding: 8px 32px 12px; height: 120px; }
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }

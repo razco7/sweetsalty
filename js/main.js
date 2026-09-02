@@ -4,6 +4,46 @@
 const ROOT = document.documentElement.dataset.root || '.';
 function p(path) { return ROOT + '/' + path; }
 
+/* ---- Cookie consent (gates Google Analytics until accepted) ---- */
+const GA_ID = 'G-61EPP7DCVE';
+function loadAnalytics() {
+  if (window.gaLoaded) return;
+  window.gaLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+}
+
+const cookieConsent = localStorage.getItem('cookieConsent');
+if (cookieConsent === 'accepted') {
+  loadAnalytics();
+} else if (cookieConsent !== 'declined') {
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <p>We use cookies to understand how visitors use this site.</p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-decline">Decline</button>
+      <button class="cookie-btn cookie-accept">Accept</button>
+    </div>
+  `;
+  document.body.appendChild(banner);
+  banner.querySelector('.cookie-accept').addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    loadAnalytics();
+    banner.remove();
+  });
+  banner.querySelector('.cookie-decline').addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    banner.remove();
+  });
+}
+
 /* ---- Recipe data ---- */
 const ALL_RECIPES = [
   { title: "Savory Libyan Ka'ak", img: 'images/66d8046f1a2bf9c9c828c40d_Kaak.jpg', desc: 'Traditional ring-shaped cookies that hold a special place in Libyan cuisine', tags: ['Cookie','Middle East','Salty','Moderate'], page: 'recipe-pages/savory-libyan-kaak.html', popular: false },

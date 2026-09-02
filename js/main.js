@@ -19,14 +19,16 @@ function loadAnalytics() {
   document.head.appendChild(script);
 }
 
-const cookieConsent = localStorage.getItem('cookieConsent');
-if (cookieConsent === 'accepted') {
-  loadAnalytics();
-} else if (cookieConsent !== 'declined') {
+function showCookieBanner() {
+  const existing = document.querySelector('.cookie-banner');
+  if (existing) return;
   const banner = document.createElement('div');
   banner.className = 'cookie-banner';
   banner.innerHTML = `
-    <p>We use cookies to understand how visitors use this site.</p>
+    <div class="cookie-banner-header">
+      <span class="cookie-banner-icon" aria-hidden="true">🍪</span>
+      <p>We use cookies to understand how visitors use this site, wherever in the world you're baking from.</p>
+    </div>
     <div class="cookie-banner-actions">
       <button class="cookie-btn cookie-decline">Decline</button>
       <button class="cookie-btn cookie-accept">Accept</button>
@@ -43,6 +45,27 @@ if (cookieConsent === 'accepted') {
     banner.remove();
   });
 }
+
+const cookieConsent = localStorage.getItem('cookieConsent');
+if (cookieConsent === 'accepted') {
+  loadAnalytics();
+} else if (cookieConsent !== 'declined') {
+  showCookieBanner();
+}
+
+// Persistent way to revisit the choice later, injected into every footer.
+document.querySelectorAll('.footer-copyright').forEach(copyright => {
+  copyright.append(' · ');
+  const link = document.createElement('a');
+  link.href = '#';
+  link.className = 'cookie-preferences-link';
+  link.textContent = 'Cookie preferences';
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    showCookieBanner();
+  });
+  copyright.appendChild(link);
+});
 
 /* ---- Recipe data ---- */
 const ALL_RECIPES = [

@@ -1,0 +1,37 @@
+# Sweet / Salty
+
+A recipe website for cookies, pastry, and desserts from around the world.
+
+🔗 **Live site:** [sweetsalty.info](https://sweetsalty.info)
+
+## About
+
+Sweet / Salty started as a [Webflow](https://webflow.com) site and was
+rebuilt here as a static HTML/CSS/JS site, hosted on GitHub Pages with a
+custom domain. It's a personal project — a collection of tested recipes,
+organized by taste, region, difficulty, and type.
+
+## Tech stack
+
+Plain HTML, CSS, and JavaScript. No framework, no build step, no
+`package.json` — every page is a static file served as-is.
+
+- **Hosting:** [GitHub Pages](https://pages.github.com), custom domain via IONOS DNS
+- **Analytics:** Google Analytics 4, gated behind a cookie-consent banner
+- **Forms:** [Formspree](https://formspree.io) (contact form)
+- **Fonts:** Poppins, self-hosted (no external font requests)
+
+## Running locally
+
+```bash
+python3 -m http.server 3456
+```
+
+Then open `http://localhost:3456`.
+
+## Contributing
+
+See [`CLAUDE.md`](./CLAUDE.md) for the project's structure, conventions,
+and gotchas (recipe data model, cache-busting, image sizing, etc.) — it's
+the canonical reference for how this codebase is organized and should be
+extended.

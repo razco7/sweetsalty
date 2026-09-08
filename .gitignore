@@ -3,3 +3,9 @@ from webflow/
 
 # OS files
 .DS_Store
+
+# Python bytecode cache (scripts/)
+__pycache__/
+
+# Search Console service account key — never commit credentials
+scripts/credentials/

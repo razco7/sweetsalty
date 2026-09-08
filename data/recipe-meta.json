@@ -1,0 +1,154 @@
+{
+  "savory-libyan-kaak": {
+    "prepTime": "PT20M",
+    "cookTime": "PT30M",
+    "totalTime": "PT50M",
+    "recipeYield": "60–70 Ka'aks",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "biscotti": {
+    "prepTime": "PT2H",
+    "cookTime": "PT40M",
+    "totalTime": "PT2H40M",
+    "recipeYield": "30–36 pieces",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "italian-s-cookies": {
+    "prepTime": "PT25M",
+    "cookTime": "PT14M",
+    "totalTime": "PT40M",
+    "recipeYield": "30–35 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-07-01"
+  },
+  "muhallebi": {
+    "prepTime": "PT5M",
+    "cookTime": "PT15M",
+    "totalTime": "PT20M",
+    "recipeYield": "4 servings",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "crepe": {
+    "prepTime": "PT10M",
+    "cookTime": "PT36M",
+    "totalTime": "PT58M",
+    "recipeYield": "10–12 crêpes",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "chocolate-souffle": {
+    "prepTime": "PT30M",
+    "cookTime": "PT15M",
+    "totalTime": "PT45M",
+    "recipeYield": "4–5 soufflés",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "cupcake": {
+    "prepTime": "PT30M",
+    "cookTime": "PT20M",
+    "totalTime": "PT1H30M",
+    "recipeYield": "12 cupcakes",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "sable-cookies": {
+    "prepTime": "PT50M",
+    "cookTime": "PT15M",
+    "totalTime": "PT1H5M",
+    "recipeYield": "24–30 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "french-macarons": {
+    "prepTime": "PT2H",
+    "cookTime": "PT18M",
+    "totalTime": "PT3H",
+    "recipeYield": "20–25 macarons",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "danish-butter-cookies": {
+    "prepTime": "PT20M",
+    "cookTime": "PT12M",
+    "totalTime": "PT32M",
+    "recipeYield": "24–36 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "chocolate-chip-cookies": {
+    "prepTime": "PT30M",
+    "cookTime": "PT12M",
+    "totalTime": "PT42M",
+    "recipeYield": "30–40 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "apple-strudel": {
+    "prepTime": "PT2H",
+    "cookTime": "PT40M",
+    "totalTime": "PT2H40M",
+    "recipeYield": "8–10 pieces",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "gingerbread-cookies": {
+    "prepTime": "PT30M",
+    "cookTime": "PT10M",
+    "totalTime": "PT40M",
+    "recipeYield": "30–40 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "french-toast": {
+    "prepTime": "PT10M",
+    "cookTime": "PT20M",
+    "totalTime": "PT30M",
+    "recipeYield": "8 French toasts",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "pizza": {
+    "prepTime": "PT20M",
+    "cookTime": "PT15M",
+    "totalTime": "PT3H40M",
+    "recipeYield": "Two 12-inch pizzas",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "new-york-cheesecake": {
+    "prepTime": "PT30M",
+    "cookTime": "PT1H10M",
+    "totalTime": "PT6H40M",
+    "recipeYield": "12–16 slices",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "croissant": {
+    "prepTime": "PT3H",
+    "cookTime": "PT20M",
+    "totalTime": "PT3H20M",
+    "recipeYield": "12–16 croissants",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-05-27"
+  },
+  "vanillekipferl": {
+    "prepTime": "PT45M",
+    "cookTime": "PT15M",
+    "totalTime": "PT1H10M",
+    "recipeYield": "40–45 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-08-29"
+  },
+  "gevulde-koek": {
+    "prepTime": "PT45M",
+    "cookTime": "PT15M",
+    "totalTime": "PT2H",
+    "recipeYield": "10–12 cookies",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-09-08"
+  }
+}

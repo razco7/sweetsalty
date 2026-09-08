@@ -87,6 +87,7 @@ const ALL_RECIPES = [
   { title: 'New York Cheesecake', img: 'images/662b78c8d52e59c71dd74e35_NY-cheesecake.jpg', desc: 'Rich, creamy, & dense dessert that is beloved for its smooth consistency & elegance', tags: ['Cake','USA','Sweet','Moderate'], page: 'recipe-pages/new-york-cheesecake.html', popular: false },
   { title: 'Croissant', img: 'images/6601b52f41da3aef04d7d4d3_Croissant.jpg', desc: 'Flaky, buttery pastry known for its crescent shape, an emblem of French cuisine', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/croissant.html', popular: false },
   { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Delicate crescent-shaped shortbread cookies rolled in vanilla sugar, an Austrian Christmas classic', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false, date: '2026-08-29' },
+  { title: 'Gevulde Koek', img: 'images/gevulde-koek.jpg', desc: 'A round Dutch shortcrust cookie filled with sweet almond paste and topped with a single whole almond', tags: ['Cookie','Netherlands','Sweet','Moderate'], page: 'recipe-pages/gevulde-koek.html', popular: false, date: '2026-09-08' },
 ];
 
 const TAG_LINKS = {
@@ -101,6 +102,7 @@ const TAG_LINKS = {
   'Denmark': 'collection-pages/denmark-recipes.html',
   'USA': 'collection-pages/usa-recipes.html',
   'Austria': 'collection-pages/sweet-recipes.html',
+  'Netherlands': 'collection-pages/sweet-recipes.html',
   'Middle East': 'collection-pages/middle-east-recipes.html',
   'Sweet': 'collection-pages/sweet-recipes.html',
   'Salty': 'collection-pages/salty-recipes.html',

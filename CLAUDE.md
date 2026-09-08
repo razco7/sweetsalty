@@ -21,6 +21,11 @@ css/styles.css             Single stylesheet for the whole site
 js/main.js                 Single script for the whole site
 images/                    All photos + logo/icon SVGs
 fonts/                     Self-hosted Poppins woff2 (300/400/500/600/700, latin subset)
+sitemap.xml, robots.txt    Generated — see SEO & structured data below
+scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
+data/*.json                Hand-maintained inputs the generators can't derive on their own
+reports/*.md               Weekly Search Console reports (auto-committed, see below)
+.github/workflows/         Currently one: the weekly Search Console report
 ```
 
 ## Critical convention: cache-busting version query strings
@@ -72,6 +77,54 @@ sections, numbered Instructions, and a "Tips & Notes" box.
   purple, despite none of those photos having that background color.
 - Remember to also add the recipe to `ALL_RECIPES` in `main.js` — the page
   existing alone doesn't make it discoverable anywhere.
+- Add a matching entry to `data/recipe-meta.json` (`prepTime`, `cookTime`,
+  `totalTime`, `recipeYield`, `author`, `datePublished` — see SEO &
+  structured data below) and re-run the four generator scripts. A new
+  recipe with no `recipe-meta.json` entry makes `generate_schema.py` fail
+  loudly rather than ship broken schema — that's intentional.
+
+## SEO & structured data
+
+Four scripts (in `scripts/`, full docs in `scripts/README.md`) generate
+everything SEO-related from data that already exists elsewhere in the
+repo — none of them invent content, and all are safe to re-run any time.
+**After adding, removing, re-tagging, or editing a recipe, re-run all
+four** (order doesn't matter) before committing:
+
+```bash
+python3 scripts/generate_schema.py        # Recipe JSON-LD on every recipe page
+python3 scripts/generate_sitemap.py       # sitemap.xml from the real page inventory
+python3 scripts/generate_static_links.py  # <noscript> fallback links on listing pages
+python3 scripts/add_seo_tags.py           # canonical URL + meta description on every page
+```
+
+- `generate_schema.py` parses each recipe page's own DOM for description,
+  ingredients, and instructions, and pulls `prepTime`/`cookTime`/
+  `totalTime`/`recipeYield`/`author`/`datePublished` from
+  `data/recipe-meta.json` (fails loudly per-field if an entry is missing
+  — never guesses). `dateModified` comes from the page's last git commit.
+- `add_seo_tags.py` derives `<meta name="description">` from each page's
+  `og:description`, trimmed to whole sentences that fit Google's
+  ~155–160 character snippet. If a recipe's first sentence alone runs
+  over that, add a hand-written replacement to
+  `data/meta-description-overrides.json` rather than editing the
+  on-page copy.
+- Never hand-write JSON-LD, canonical tags, sitemap entries, or the
+  static fallback links directly into a page — they'll just get
+  overwritten (or drift) on the next generator run.
+
+## Search Console reporting
+
+`scripts/search_console_report.py` pulls 28 days of Search Console data
+and writes a ranked report to `reports/`; `.github/workflows/search-console-report.yml`
+runs it every Monday and commits the result automatically — this runs on
+GitHub's servers, not in any chat session, so nothing surfaces on its own.
+Needs `GSC_SERVICE_ACCOUNT_FILE`/`GSC_SERVICE_ACCOUNT_JSON` and
+`GSC_SITE_URL` (repo secrets for the workflow, env vars locally) — full
+setup in `scripts/README.md`. **`GSC_SITE_URL` must be
+`sc-domain:sweetsalty.info`**, not the browser URL — `sweetsalty.info`
+is a Domain property, and the URL form authenticates fine but then fails
+every query with a 403 that reads like a permissions bug.
 
 ## Cookie consent / Google Analytics
 
@@ -141,4 +194,7 @@ this codebase.
 Every change is committed and pushed directly to `main` — GitHub Pages
 serves straight from it, no CI/build step. Always bump CSS/JS version
 query strings (see above) in the same commit as the change, or the deploy
-will appear not to have worked due to caching.
+will appear not to have worked due to caching. Same rule for recipe
+content: re-run the four SEO generator scripts (see above) in the same
+commit as any recipe edit, or the live page's schema/description will
+silently go stale.

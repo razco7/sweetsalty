@@ -601,19 +601,29 @@ section { padding: 80px 0; }
   font-weight: 700;
   line-height: 40px;
   margin-top: 8px;
+  min-height: 80px; /* 2 lines — a title that wraps doesn't shove the row out of line */
 }
 .recipe-card-body h3 a { color: var(--text); transition: color var(--ease); }
 .recipe-card-body h3 a:hover { color: var(--coral); }
 .recipe-card-body p {
   font-size: 16px; color: #777;
-  line-height: 24px; flex: 1; margin-bottom: 12px;
+  line-height: 24px; margin-bottom: 12px;
   font-weight: 300;
+  /* Clamp every description to 3 lines and always reserve those 3 lines, so
+     card bodies are the same height and the tag rows line up across a grid row.
+     Keep card `desc` strings ≲85 chars so this rarely actually truncates. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: 72px;
 }
 .recipe-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 0;
+  margin-top: auto; /* pin to the bottom of the card body */
 }
 .tag {
   display: inline-block;
@@ -1183,7 +1193,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .page-header h1 { font-size: 32px; line-height: 44px; }
   .page-header p { font-size: 18px; line-height: 28px; }
   .banner-body { font-size: 24px; line-height: 36px; }
-  .recipe-card-body h3 { font-size: 20px; line-height: 32px; }
+  .recipe-card-body h3 { font-size: 20px; line-height: 32px; min-height: 64px; }
 }
 
 @media (max-width: 900px) {
@@ -1231,7 +1241,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .section-heading--left h2 { font-size: 24px; line-height: 36px; }
   .page-header h1 { font-size: 24px; line-height: 36px; }
   .page-header p { font-size: 16px; line-height: 24px; }
-  .recipe-card-body h3 { font-size: 18px; line-height: 28px; }
+  .recipe-card-body h3 { font-size: 18px; line-height: 28px; min-height: 56px; }
   .ingredients-list li { font-size: 16px; }
   .ingredients-list li em { font-size: 16px !important; }
   .instructions-list li .step-content { font-size: 16px; line-height: 26px; }

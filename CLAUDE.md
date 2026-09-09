@@ -68,6 +68,10 @@ automatically appears in All Recipes, every matching collection page, and
 search. Do not hand-write recipe cards into collection pages.
 
 Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
+- `desc` is the card blurb (also used in the Pinterest pin CSV). Keep it
+  **short and uniform — roughly 55–75 characters**. Cards clamp it to 3 lines
+  and reserve that height so every card lines up; a much longer `desc` gets a
+  "…". After editing any `desc`, re-run `python3 scripts/generate_pins.py`.
 - `tags` must exactly match existing tag names (see `TAG_LINKS` for the
   full list and which collection page each tag routes to).
 - `date: 'YYYY-MM-DD'` (optional) shows a green "New!" badge and sorts the
@@ -276,6 +280,11 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
+- **Recipe cards** are kept a uniform height so grid rows line up: the title
+  reserves 2 lines (`min-height` on `.recipe-card-body h3`), the description is
+  clamped to 3 reserved lines (`-webkit-line-clamp` + `min-height` on
+  `.recipe-card-body p`), and `.recipe-tags` has `margin-top: auto` to pin to
+  the bottom. Keep `desc` strings ~55–75 chars so the clamp doesn't bite.
 - **Recipe-card tags** (`.recipe-tags .tag`, rendered by `recipeCardHTML`):
   14px, no underline at rest, `·` separators (a `::after` on non-last tags so a
   wrap trails the dot rather than orphaning it), underline + green on hover.

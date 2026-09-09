@@ -147,7 +147,7 @@ python3 scripts/generate_pins.py                 # every recipe + a full CSV
 python3 scripts/generate_pins.py --only sachertorte  # one pin + a one-row CSV
 ```
 
-Re-run it whenever a recipe's photo, tags, or `data/recipe-meta.json`
+Re-run it whenever a recipe's photo, tags, desc, or `data/recipe-meta.json`
 entry changes, or after editing `data/pin-titles.json` — it's
 idempotent, and `pins/` is committed (not gitignored) since the CSV
 references the images by their live site URL.

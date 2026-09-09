@@ -91,15 +91,17 @@ not on every recipe/static page.
 for adding one recipe a week. **Phase 1** (no args) reads `ALL_RECIPES`,
 `data/recipe-ideas.json`, and the newest `reports/` file, computes
 coverage by country/type/difficulty/Sweet-Salty, and proposes 5
-candidates against a fixed set of selection rules (fill each represented
-country to 4 before opening new ones; new countries enter in blocks of 4;
+candidates against a fixed set of selection rules (**any country under 4
+recipes is the priority — get it to 4 fast**; new countries open one
+block of 4 at a time and only once every existing country is at 4;
 favour uncommon-but-searched dishes; weight for seasonality 6–8 weeks
 out). It writes nothing except logging the 5 as `proposed` in
 `data/recipe-ideas.json`, then stops. **Phase 2** (`build <slug>`) builds
 one approved idea end to end — recipe page, `ALL_RECIPES` entry, the three
-`data/*.json` entries, a country collection page if one doesn't exist
-yet, all four SEO generators, the pin, cache-buster bump — pausing once
-for Raz to supply the photo, and ending with a PR (never a merge).
+`data/*.json` entries, its country collection page if one doesn't exist
+yet (every country gets one from recipe #1), all four SEO generators, the
+pin, cache-buster bump — pausing once for Raz to supply the photo, and
+ending with a PR (never a merge).
 
 `data/recipe-ideas.json` is an append-only log (`proposed` / `rejected` /
 `published`) — **never pruned**; it's the long-term memory of what's been
@@ -269,11 +271,11 @@ be visibly wrong-sized for one frame before JS corrects it.
 - All font sizes are in `px`, not `rem`/`em`, sitewide (converted
   deliberately — don't reintroduce rem/em).
 - **Every country tag has its own `collection-pages/<country>-recipes.html`**,
-  however few recipes it holds — no country routes to a broader page like
-  `sweet-recipes.html`. A one-recipe collection is fine; the point is that
-  clicking a country tag always lands somewhere that page is *about* that
-  country. (`Cake` and `Dessert` still route to `sweet-recipes.html` — there's
-  no dedicated page for either.)
+  built with that country's first recipe — no country routes to a broader page
+  like `sweet-recipes.html`. A one-recipe collection is fine short-term, but a
+  country under 4 recipes is the recipe pipeline's top priority (see "Weekly
+  recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
+  route to `sweet-recipes.html` — there's no dedicated page for either.)
 - Card tags are always plain links, every one clickable — including a tag that
   points at the page you're already on. Don't special-case "self-links"; a
   deliberate design decision (tried muting them, reverted).

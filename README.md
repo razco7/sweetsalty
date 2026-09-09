@@ -40,7 +40,9 @@ New recipes are added one a week via the `/new-recipe` slash command
 Phase 1 proposes 5 ideas against coverage and seasonality rules and logs
 them to `data/recipe-ideas.json`; Phase 2 builds an approved one end to
 end (page, data entries, SEO generators, Pinterest pin) and opens a PR.
-See the "Weekly recipe pipeline" section of `CLAUDE.md`.
+Each country gets its own collection page from its first recipe, and any
+country under 4 recipes is the pipeline's priority until it fills. See the
+"Weekly recipe pipeline" section of `CLAUDE.md`.
 
 ## Contributing
 

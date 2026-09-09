@@ -51,22 +51,29 @@ Cake 1, Dessert 1 · Easy 9, Moderate 9, Hard 1 · Sweet 17, Salty 2.
 
 ### Selection rules — in priority order
 
-1. **Fill represented countries to 4 before opening any new country.** Backlog as
-   of 2026-09-09: Italy +1, USA +1, Middle East +2, Austria +2, Denmark +3,
-   Germany +3, Netherlands +3. Propose only from these countries until every one
-   is at 4. France is done at 6. (Recompute the gaps each run from `ALL_RECIPES`
-   + the log's `published`/`proposed` entries, so approved-but-not-yet-built
-   ideas still count against a country's remaining slots.)
+1. **Any country under 4 recipes is the priority — get it to 4 as fast as
+   possible.** A country sitting at 1–3 always outranks starting anything new
+   (a new country, or padding one that's already at 4+). Propose only from
+   under-4 countries until every existing country is at 4. Backlog as of
+   2026-09-09: Italy +1, USA +1, Middle East +2, Austria +2, Denmark +3,
+   Germany +3, Netherlands +3 (France is done at 6). Recompute the gaps each run
+   from `ALL_RECIPES` + the log's `published`/`proposed` entries, so
+   approved-but-not-yet-built ideas still count against a country's slots. When
+   several under-4 countries remain, lean toward the ones closest to 4 so pages
+   stop looking thin sooner — but any under-4 country is fair game.
 2. **Use the backlog to close type & difficulty gaps.** Cake, Dessert, Salty and
    Hard are the thin buckets against Cookie/Pastry and Easy/Moderate. When a
    country has several plausible candidates (e.g. which German or Dutch recipe),
    favour the one that also fills a type or difficulty hole. Push `Hard` and
    `Cake`/`Dessert`/`Salty` when you reasonably can; aim for an even
    Easy/Moderate/Hard spread over time.
-3. **New countries come in committed blocks of four.** Only once the entire
-   backlog is at 4: never propose a lone recipe from an unrepresented country.
-   Propose all four at once — varied across type and difficulty — as a set Raz
-   approves whole. They then publish over consecutive weeks.
+3. **New countries open in committed blocks of four, one block at a time.** Only
+   once every existing country is at 4: never propose a lone recipe from an
+   unrepresented country. Propose all four at once — varied across type and
+   difficulty — as a set Raz approves whole. Its collection page is built with
+   recipe #1 (Phase 2, step 6), the four publish on consecutive weeks, and that
+   country is then the priority (rule 1) until it reaches 4 — don't open a
+   second new country while one is still filling.
 4. **Scope: sweet and savory baking.** Breads, pies, tarts, savory pastries — in.
    Non-baked desserts and general stovetop cooking — out. (Muhallebi predates
    this rule; don't use it as precedent.)
@@ -117,9 +124,12 @@ Append all 5 proposals to `data/recipe-ideas.json` as `proposed`. Entry shape:
   `pasteis-de-nata`). Check it collides with nothing in `recipe-pages/` or the
   log.
 - `status`: `proposed` | `rejected` | `published`.
-- When Raz picks one: flip that entry to `published`, the other four to
-  `rejected`, and add a one-line `note` on each rejection saying why (usually
-  "not selected this week").
+- When Raz picks one to build: set it to `published` as its PR opens and add a
+  `built` date. **Unpicked proposals stay `proposed`** — they're a standing
+  queue, not rejects. Raz often approves the whole set of 5 and works through
+  them over several weeks; the next `build <slug>` just takes the next one.
+- Only set `rejected` when Raz explicitly passes on an idea — record why in
+  `note`.
 - **Never prune this file.** Long-term recall is the entire point. If Raz asks to
   revisit a past idea, pull it back out of the log rather than reinventing it.
 

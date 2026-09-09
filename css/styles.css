@@ -617,7 +617,7 @@ section { padding: 80px 0; }
 }
 .tag {
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: var(--text);
   background: none;

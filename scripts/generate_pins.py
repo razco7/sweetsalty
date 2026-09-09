@@ -61,7 +61,11 @@ GREY = "#8a8377"
 
 TITLE_MAX = 100
 DESC_MAX = 500
-PUBLISH_SPAN_DAYS = 27
+# Pinterest's bulk scheduler rejects any pin dated more than 2 weeks out, and
+# rejects the whole upload if a single row is invalid. Dates start tomorrow, so
+# the furthest pin is (1 + PUBLISH_SPAN_DAYS) days out — keep that at 12 or under
+# to leave slack for upload lag and timezones. 11 => furthest pin +12 days.
+PUBLISH_SPAN_DAYS = 11
 PUBLISH_HOUR = 20
 
 BOARD_MAP = {

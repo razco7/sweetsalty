@@ -169,10 +169,13 @@ already queued on Pinterest.
   each weight needed gets converted to TTF once via fontTools and
   cached in `scripts/.font-cache/` (gitignored — regenerated from the
   real `fonts/*.woff2` source, delete it any time).
-- **CSV publish dates** spread evenly across 27 days starting tomorrow
-  at 20:00 — re-running the script shifts every date forward relative
-  to whatever "tomorrow" is on the day you run it, so generate the CSV
-  right before actually uploading it to Pinterest, not far in advance.
+- **CSV publish dates** spread across 11 days starting tomorrow at 20:00
+  (furthest pin ~12 days out). Pinterest's bulk scheduler **rejects any
+  pin dated more than 2 weeks out, and rejects the entire upload if one
+  row is invalid** — the 12-day ceiling leaves slack for upload lag and
+  timezones. Re-running shifts every date forward relative to whatever
+  "tomorrow" is when you run it, so generate the CSV right before
+  uploading, not days ahead.
 - **Pinterest board** is inferred from each recipe's type tag (Cookie /
   Pastry / Cake+Dessert / Breakfast) — a recipe untagged with one of
   those gets an empty board column, which Pinterest's bulk uploader

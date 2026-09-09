@@ -55,7 +55,8 @@ Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
 - `tags` must exactly match existing tag names (see `TAG_LINKS` for the
   full list and which collection page each tag routes to).
 - `date: 'YYYY-MM-DD'` (optional) shows a green "New!" badge and sorts the
-  recipe to the front of every grid for 30 days after that date.
+  recipe to the front of every grid for 7 days after that date (`NEW_BADGE_DAYS`
+  in `main.js`).
 - `popular: true` shows a purple "Popular Recipe" badge.
 
 The homepage's "Selected cookie recipes" section is a hand-curated, static

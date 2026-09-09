@@ -132,10 +132,12 @@ Runs as `build <slug>`. The `<slug>` must already be `proposed` in
 
 ### Correctness bar (read before writing a single quantity)
 
-Recipes must be **plausible and correctly proportioned** — Raz tests every one
-before it goes live. If you're unsure of a ratio, hydration, pan size, bake
-temp/time, or yield, **flag it in your summary** rather than guessing. Better to
-ask than to ship a broken recipe.
+Recipes must be **plausible and correctly proportioned**. Raz tests each recipe
+*after* it publishes, not before — so a wrong ratio ships live until he catches
+it. If you're unsure of a ratio, hydration, pan size, bake temp/time, or yield,
+**call it out in the PR summary** as something to verify, rather than guessing
+silently. Use well-established proportions from a reliable source; don't
+improvise quantities.
 
 ### Part A — build everything except the photo
 
@@ -181,8 +183,8 @@ shape: `{ title, img: 'images/<slug>.jpg', desc, tags: [...], page:
 'recipe-pages/<slug>.html', popular: false, date: '<today>' }`. `tags` must
 exactly match existing tag names (type + country + Sweet/Salty + difficulty).
 `date: '<today>'` gives it the green "New!" badge and floats it to the top of
-every grid for 30 days. Card-grid `<img>` needs only the 800px file — **no
-srcset there.**
+every grid for `NEW_BADGE_DAYS` (currently 7) days. Card-grid `<img>` needs only
+the 800px file — **no srcset there.**
 
 **5. `data/recipe-meta.json`.** Add a `<slug>` entry with all six required
 fields: `prepTime`, `cookTime`, `totalTime`, `recipeYield`, `author`
@@ -275,10 +277,12 @@ python3 scripts/generate_schema.py
 python3 scripts/generate_pins.py --only <slug>
 ```
 
-`generate_pins.py` regenerates `pins/<slug>.jpg` and rewrites
-`pins/pinterest-bulk-upload.csv`. Note its CSV publish dates shift every run
-relative to "tomorrow" — that's expected; the CSV is regenerated right before an
-actual upload anyway.
+`generate_pins.py --only <slug>` writes `pins/<slug>.jpg` and overwrites
+`pins/pinterest-bulk-upload.csv` with a **single row** for this recipe, scheduled
+for tomorrow 20:00. That one-row CSV is the artifact Raz uploads to Pinterest to
+schedule the new pin — commit it as-is. Do not run the bare `generate_pins.py`
+(no `--only`) here: it rebuilds the full CSV with shifted dates, which would
+double-schedule the pins already queued on Pinterest.
 
 **3. Update docs if this run changed a convention** — a new country, a new
 collection page, a new `TAG_LINKS` shape all warrant a line in `CLAUDE.md` (and

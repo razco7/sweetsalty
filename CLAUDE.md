@@ -173,6 +173,17 @@ pass (Lighthouse mobile Performance went from 66 to ~88):
 - `sips` (macOS built-in) is the simplest tool: `sips -Z <maxdim> -s
   formatOptions <quality> file.jpg --out file.jpg`.
 
+## Site verification tags
+
+Two files/tags exist purely to prove domain ownership to third parties —
+don't remove either, and don't be confused by what looks like dead
+weight:
+- `googlebc8928ca4194ad24.html` (project root) — Google Search Console
+  verification. Its entire content is one line identifying itself; it's
+  never linked from anywhere on the site.
+- `<meta name="p:domain_verify" ...>` in `index.html`'s `<head>` —
+  Pinterest's domain claim, checked only on the homepage.
+
 ## Fonts
 
 Poppins is self-hosted from `fonts/*.woff2` via `@font-face` in

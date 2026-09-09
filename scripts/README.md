@@ -116,3 +116,21 @@ commits the resulting report. It needs two repository secrets (Settings
 
 The workflow writes that secret to a temporary file at runtime (never to
 the repo) and points `GSC_SERVICE_ACCOUNT_FILE` at it.
+
+## check_sitemap_status.py
+
+A quick diagnostic: is Google actually fetching `sitemap.xml`, and are
+there any warnings/errors? Uses the same credentials as
+`search_console_report.py` above — no separate setup needed.
+
+```bash
+export GSC_SERVICE_ACCOUNT_FILE=scripts/credentials/service-account.json
+export GSC_SITE_URL=sc-domain:sweetsalty.info
+python3 scripts/check_sitemap_status.py
+```
+
+Or on demand via GitHub Actions, without opening Search Console's UI at
+all: `.github/workflows/check-sitemap-status.yml` (`workflow_dispatch`
+only, no schedule) — trigger with `gh workflow run
+check-sitemap-status.yml` and read the result with `gh run view <run-id>
+--log`.

@@ -25,7 +25,7 @@ sitemap.xml, robots.txt    Generated — see SEO & structured data below
 scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
 data/*.json                Hand-maintained inputs the generators can't derive on their own
 reports/*.md               Weekly Search Console reports (auto-committed, see below)
-.github/workflows/         Currently one: the weekly Search Console report
+.github/workflows/         Weekly Search Console report + an on-demand sitemap check
 ```
 
 ## Critical convention: cache-busting version query strings
@@ -135,6 +135,11 @@ setup in `scripts/README.md`. **`GSC_SITE_URL` must be
 is a Domain property, and the URL form authenticates fine but then fails
 every query with a 403 that reads like a permissions bug.
 
+To check whether Google has actually fetched the sitemap yet, without
+opening Search Console's UI: `gh workflow run check-sitemap-status.yml`
+(same credentials, `scripts/check_sitemap_status.py`, manual dispatch
+only — no schedule) — read the result with `gh run view <id> --log`.
+
 ## Cookie consent / Google Analytics
 
 GA4 (`G-61EPP7DCVE`) is **not** loaded unconditionally. `main.js` shows a
@@ -216,3 +221,9 @@ will appear not to have worked due to caching. Same rule for recipe
 content: re-run the four SEO generator scripts (see above) in the same
 commit as any recipe edit, or the live page's schema/description will
 silently go stale.
+
+**Any commit that changes a convention, adds/renames a script or
+workflow, or changes how something is set up must update the relevant
+doc — `CLAUDE.md`, `scripts/README.md`, or the root `README.md` — in
+that same commit, not as a follow-up.** Docs that lag the code are worse
+than no docs, because they're trusted by default.

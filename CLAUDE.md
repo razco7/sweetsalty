@@ -154,6 +154,31 @@ sections, numbered Instructions, and a "Tips & Notes" box.
   `data/pin-titles.json` and re-run `scripts/generate_pins.py` (falls
   back to the site title, flagged, if skipped — see scripts/README.md).
 
+## Ingredient quantities & conversions
+
+Every ingredient line is **metric first, imperial in parentheses** —
+`225g (1 cup) unsalted butter, softened`, `180°C (350°F)`. Don't write
+imperial-first (`1 cup (225g)…`); a few older lines still do and should
+be flipped whenever that page is next edited.
+
+Gram↔cup pairs use this table (US customary cup, 240ml). Treat it as the
+target, not gospel — rounding to a "nice" fraction is fine within ~±8%
+(e.g. 300g flour is written as `2½ cups`), but don't let the *same*
+ingredient use two different ratios across pages.
+
+| Ingredient | per cup |
+|---|---|
+| All-purpose flour | 125g |
+| Granulated sugar | 200g |
+| Brown sugar, packed | 200g |
+| Confectioners' / powdered sugar | 120g |
+| Butter | 227g |
+| Almond flour / ground almonds | 96g |
+| Dry breadcrumbs | 108g |
+
+Never give a quantity in the wrong unit dimension — sugar and other
+solids are grams, not millilitres (`3 tbsp (38g) sugar`, not `(45ml)`).
+
 ## SEO & structured data
 
 Four scripts (in `scripts/`, full docs in `scripts/README.md`) generate
@@ -299,6 +324,13 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
+- **Every tag routes somewhere via `TAG_LINKS` in `main.js`** — difficulty
+  (`easy-level-recipes.html` / `moderate-level-recipes.html` /
+  `hard-level-recipes.html`), `Sweet`/`Salty`, type, country. The hero-tag
+  links on a recipe page must match what `TAG_LINKS` would produce for the
+  same tag; don't leave a hero tag as a bare `<span>` or point it at
+  `all-recipes.html`. Tag text must be exactly `Easy`/`Moderate`/`Hard`
+  (not "Advanced" etc.) so the collection filter matches.
 - **Recipe cards** keep tight, consistent vertical spacing. The description is
   always exactly two lines tall: `.recipe-card-body p` has `min-height: 48px`
   (2 × `line-height`) reserving the second line so short blurbs don't leave the

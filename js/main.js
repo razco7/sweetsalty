@@ -109,7 +109,7 @@ const TAG_LINKS = {
   'Salty': 'collection-pages/salty-recipes.html',
   'Easy': 'collection-pages/easy-level-recipes.html',
   'Moderate': 'collection-pages/moderate-level-recipes.html',
-  'Hard': 'all-recipes.html',
+  'Hard': 'collection-pages/hard-level-recipes.html',
 };
 
 /* ---- Recipe grid rendering (collection & all-recipes pages) ---- */

@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "slug": "appeltaart",
+    "name": "Dutch Appeltaart",
+    "country": "Netherlands",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-09-09",
+    "note": "Netherlands backlog (+3). Fills toward pie/pastry; targets autumn (October apple-pie search peak). Distinct from Apple Strudel — thick press-in shortcrust vs. stretched dough. High search demand."
+  },
+  {
+    "slug": "bienenstich",
+    "name": "Bienenstich (German Bee Sting Cake)",
+    "country": "Germany",
+    "type": "Cake",
+    "status": "proposed",
+    "proposed": "2026-09-09",
+    "note": "Germany backlog (+3). Fills the Cake hole (was 1). Yeasted cake, caramelized-almond top, vanilla-cream centre. Targets autumn (honey/almond, cozy season). Moderate English search volume — flagged."
+  },
+  {
+    "slug": "sachertorte",
+    "name": "Sachertorte",
+    "country": "Austria",
+    "type": "Cake",
+    "status": "proposed",
+    "proposed": "2026-09-09",
+    "note": "Austria backlog (+2). Fills BOTH thin buckets — Cake (was 1) and Hard (was 1, only the macaron). Site has no chocolate cake. Not obscure, but large evergreen + winter demand justifies it over rule 5."
+  },
+  {
+    "slug": "knafeh",
+    "name": "Knafeh (Kunafa)",
+    "country": "Middle East",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-09-09",
+    "note": "Middle East backlog (+2). Kataifi + cheese + orange-blossom syrup. Sharply rising search over the last ~2 years. Technique unlike anything else on the site. Evergreen seasonality."
+  },
+  {
+    "slug": "kanelsnegle",
+    "name": "Kanelsnegle (Danish Cinnamon Buns)",
+    "country": "Denmark",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-09-09",
+    "note": "Denmark backlog (+3). Cardamom enriched dough, cinnamon remonce, coiled + glazed. Targets autumn/winter (cinnamon/cardamom search climb). Distinct from Croissant (soft bun, not laminated). Moderate search volume under the Danish name — flagged."
+  }
+]

@@ -19,7 +19,7 @@ recipe-pages/*.html        One page per recipe
 collection-pages/*.html    One page per tag (cookie, france, easy-level, etc.)
 css/styles.css             Single stylesheet for the whole site
 js/main.js                 Single script for the whole site
-images/                    All photos + logo/icon SVGs
+images/                    All photos + logo/icon SVGs + sweet-salty-logo.png (favicon source)
 fonts/                     Self-hosted Poppins woff2 (300/400/500/600/700, latin subset)
 sitemap.xml, robots.txt    Generated — see SEO & structured data below
 scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
@@ -41,6 +41,22 @@ versions. Use a one-liner like:
 ```bash
 grep -rl 'styles.css?v=OLD' . --include="*.html" | xargs sed -i '' 's/styles\.css?v=OLD/styles.css?v=NEW/g'
 ```
+
+`favicon.png` and `apple-touch-icon.png` carry `?v=N` too (browsers cache
+favicons especially hard). Bump those the same way if either image
+changes — currently `?v=2`.
+
+## Favicon
+
+`favicon.png` (96×96, circular, transparent corners) and
+`apple-touch-icon.png` (180×180, solid square) are both generated from
+`images/sweet-salty-logo.png` (512×512, the green-square face logo). The
+favicon is the logo scaled to ~86% on its own green, then masked to the
+inscribed circle; the Apple icon is the plain square (iOS masks it to a
+rounded rect itself and renders any transparency as black, so it must
+stay opaque). Regenerate both with a short Pillow script — circle-crop
+for the favicon, straight resize for the Apple icon — and bump the
+`?v=N` on every page (see cache-busting above).
 
 ## Recipe data: single source of truth
 

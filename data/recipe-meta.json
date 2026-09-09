@@ -26,7 +26,7 @@
   "muhallebi": {
     "prepTime": "PT5M",
     "cookTime": "PT15M",
-    "totalTime": "PT20M",
+    "totalTime": "PT3H30M",
     "recipeYield": "4 servings",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
@@ -74,8 +74,8 @@
   "danish-butter-cookies": {
     "prepTime": "PT20M",
     "cookTime": "PT12M",
-    "totalTime": "PT32M",
-    "recipeYield": "24–36 cookies",
+    "totalTime": "PT45M",
+    "recipeYield": "30–32 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
   },
@@ -98,7 +98,7 @@
   "gingerbread-cookies": {
     "prepTime": "PT30M",
     "cookTime": "PT10M",
-    "totalTime": "PT40M",
+    "totalTime": "PT2H40M",
     "recipeYield": "30–40 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
@@ -128,18 +128,18 @@
     "datePublished": "2026-05-27"
   },
   "croissant": {
-    "prepTime": "PT3H",
+    "prepTime": "PT4H",
     "cookTime": "PT20M",
-    "totalTime": "PT3H20M",
+    "totalTime": "PT6H",
     "recipeYield": "12–16 croissants",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
   },
   "vanillekipferl": {
-    "prepTime": "PT45M",
+    "prepTime": "PT30M",
     "cookTime": "PT15M",
-    "totalTime": "PT1H10M",
-    "recipeYield": "40–45 cookies",
+    "totalTime": "PT1H45M",
+    "recipeYield": "45–50 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-08-29"
   },

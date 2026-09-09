@@ -33,6 +33,15 @@ python3 -m http.server 3456
 
 Then open `http://localhost:3456`.
 
+## Adding recipes
+
+New recipes are added one a week via the `/new-recipe` slash command
+([`.claude/commands/new-recipe.md`](./.claude/commands/new-recipe.md)):
+Phase 1 proposes 5 ideas against coverage and seasonality rules and logs
+them to `data/recipe-ideas.json`; Phase 2 builds an approved one end to
+end (page, data entries, SEO generators, Pinterest pin) and opens a PR.
+See the "Weekly recipe pipeline" section of `CLAUDE.md`.
+
 ## Contributing
 
 See [`CLAUDE.md`](./CLAUDE.md) for the project's structure, conventions,

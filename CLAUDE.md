@@ -24,9 +24,11 @@ fonts/                     Self-hosted Poppins woff2 (300/400/500/600/700, latin
 sitemap.xml, robots.txt    Generated — see SEO & structured data below
 scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
 data/*.json                Hand-maintained inputs the generators can't derive on their own
+                           (recipe-meta, pin-titles, meta-description-overrides, recipe-ideas)
 reports/*.md               Weekly Search Console reports (auto-committed, see below)
 pins/                      Generated Pinterest pin images + bulk-upload CSV (see scripts/README.md)
 .github/workflows/         Weekly Search Console report + an on-demand sitemap check
+.claude/commands/          Custom slash commands (see "Weekly recipe pipeline" below)
 ```
 
 ## Critical convention: cache-busting version query strings
@@ -60,7 +62,37 @@ The homepage's "Selected cookie recipes" section is a hand-curated, static
 4-card list — not driven by `ALL_RECIPES`. Leave it as editorial curation
 unless asked to change it.
 
+`ALL_RECIPES` currently lives inside `main.js`, which every page loads.
+That's fine at this size but becomes a payload problem past roughly 100
+recipes — the future fix is moving it to `data/recipes.json` and fetching
+it only on the pages that render lists (all-recipes + collection pages),
+not on every recipe/static page.
+
+## Weekly recipe pipeline
+
+`/new-recipe` (`.claude/commands/new-recipe.md`) is a two-phase workflow
+for adding one recipe a week. **Phase 1** (no args) reads `ALL_RECIPES`,
+`data/recipe-ideas.json`, and the newest `reports/` file, computes
+coverage by country/type/difficulty/Sweet-Salty, and proposes 5
+candidates against a fixed set of selection rules (fill each represented
+country to 4 before opening new ones; new countries enter in blocks of 4;
+favour uncommon-but-searched dishes; weight for seasonality 6–8 weeks
+out). It writes nothing except logging the 5 as `proposed` in
+`data/recipe-ideas.json`, then stops. **Phase 2** (`build <slug>`) builds
+one approved idea end to end — recipe page, `ALL_RECIPES` entry, the three
+`data/*.json` entries, a collection page if the country hits 4, all four
+SEO generators, the pin, cache-buster bump — pausing once for Raz to
+supply the photo, and ending with a PR (never a merge).
+
+`data/recipe-ideas.json` is an append-only log (`proposed` / `rejected` /
+`published`) — **never pruned**; it's the long-term memory of what's been
+considered and why.
+
 ## Adding a new recipe page
+
+For the normal weekly cadence, use `/new-recipe build <slug>` (see "Weekly
+recipe pipeline" above) — it automates everything below. This section is
+the manual reference it's built from.
 
 Copy the structure of an existing simple recipe (e.g.
 `recipe-pages/italian-s-cookies.html` or `vanillekipferl.html`) rather than

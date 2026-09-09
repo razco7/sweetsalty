@@ -69,7 +69,7 @@ document.querySelectorAll('.footer-copyright').forEach(copyright => {
 
 /* ---- Recipe data ---- */
 const ALL_RECIPES = [
-  { title: "Savory Libyan Ka'ak", img: 'images/savory-libyan-kaak.jpg', desc: 'Sesame-crusted ring cookies from Libyan kitchens', tags: ['Cookie','Middle East','Salty','Moderate'], page: 'recipe-pages/savory-libyan-kaak.html', popular: false },
+  { title: "Savory Syrian Ka'ak", img: 'images/savory-syrian-kaak.jpg', desc: "Aleppo's crunchy sesame-and-nigella rings", tags: ['Cookie','Middle East','Salty','Moderate'], page: 'recipe-pages/savory-syrian-kaak.html', popular: false },
   { title: 'Biscotti', img: 'images/biscotti.jpg', desc: 'Crunchy twice-baked Italian cookies', tags: ['Cookie','Italy','Sweet','Moderate'], page: 'recipe-pages/biscotti.html', popular: false },
   { title: 'Italian S Cookies', img: 'images/italian-s-cookies.jpg', desc: 'S-shaped butter cookies, scented with lemon', tags: ['Cookie','Italy','Sweet','Easy'], page: 'recipe-pages/italian-s-cookies.html', popular: false, date: '2026-07-01' },
   { title: 'Muhallebi', img: 'images/muhallebi.jpg', desc: 'Silky milk pudding with nuts and syrup', tags: ['Dessert','Middle East','Sweet','Easy'], page: 'recipe-pages/muhallebi.html', popular: false },

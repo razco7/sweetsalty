@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = "https://sweetsalty.info"
-EXCLUDE = {"404.html", "googlebc8928ca4194ad24.html"}
+EXCLUDE = {"404.html", "googlebc8928ca4194ad24.html", "recipe-pages/savory-libyan-kaak.html"}
 
 
 def discover_pages():

@@ -68,9 +68,18 @@ search overlay, `.recipe-hero` (photo | colored info panel), meta row
 (Yield/Prep/Baking/Total time), "What you'll need" + "Ingredients"
 sections, numbered Instructions, and a "Tips & Notes" box.
 
-- Recipe photos are square JPEGs, resized to **800×800**, JPEG quality
-  ~78 (`sips -Z 800 -s formatOptions 78`). Don't use full-resolution
-  exports — see Image optimization below.
+- Recipe photos need **two files** from one square source of at least
+  1600×1600: `images/X.jpg` at 800×800, quality ~78
+  (`sips -Z 800 -s formatOptions 78`) for the card-grid thumbnail, and
+  `images/X@2x.jpg` at 1600×1600 (the source as-is — re-encoding it
+  rarely shrinks a real photo meaningfully, so don't bother) for the
+  Retina/HiDPI hero. The `.recipe-hero-photo img` tag needs both, via
+  `srcset="images/X.jpg 800w, images/X@2x.jpg 1600w" sizes="(max-width:
+  768px) 100vw, 50vw"` (that breakpoint/ratio matches `.recipe-hero`'s
+  actual grid columns in `styles.css` — confirm it hasn't changed rather
+  than assuming). Card-grid `<img>` tags (rendered by `main.js`) only
+  ever need the 800px file — don't add srcset there. See Image
+  optimization below for why 800px alone looked soft on Retina screens.
 - `--recipe-accent` (inline style on `.recipe-hero`): prefer a
   **complementary** pastel color, not necessarily the exact photo
   background — e.g. Sablé is green, Croissant is purple, Muhallebi is
@@ -142,7 +151,16 @@ consent entirely.
 
 Keep images lean — this site has been through a deliberate performance
 pass (Lighthouse mobile Performance went from 66 to ~88):
-- Recipe/card photos: 800×800, quality ~78.
+- Recipe/card photos: 800×800, quality ~78 — **plus** a 1600×1600
+  `@2x` sibling for the hero photo's `srcset`, see "Adding a new recipe
+  page" above. **Sizing for a display's CSS pixel width alone isn't
+  enough** — a Sept 2026 pass shrank these to 800px reasoning they'd
+  "still be crisp at ~700px in the hero," which is only true at 1
+  physical pixel per CSS pixel. Any Retina/HiDPI screen (most modern
+  Macs and phones) renders at 2-3x that, so the hero photos looked
+  visibly soft until the `@2x` variant was added. When sizing any
+  above-the-fold image in the future, size for `display width × 2`,
+  not just display width.
 - Full-bleed backgrounds (404 page, homepage ingredients photo): resize to
   roughly what's actually displayed (1600–1920px wide), same quality.
 - Add `loading="lazy" width="…" height="…"` to any below-the-fold `<img>`.

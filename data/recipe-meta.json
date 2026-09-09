@@ -113,9 +113,9 @@
   },
   "pizza": {
     "prepTime": "PT20M",
-    "cookTime": "PT15M",
-    "totalTime": "PT3H40M",
-    "recipeYield": "Two 12-inch pizzas",
+    "cookTime": "PT10M",
+    "totalTime": "PT2H50M",
+    "recipeYield": "Three 12-inch pizzas",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
   },

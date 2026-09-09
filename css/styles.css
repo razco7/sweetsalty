@@ -613,7 +613,7 @@ section { padding: 80px 0; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 0;
+  gap: 4px 14px;
 }
 .tag {
   display: inline-block;
@@ -632,13 +632,6 @@ section { padding: 80px 0; }
 }
 .tag:hover { color: var(--green); }
 a.tag { cursor: pointer; }
-.recipe-tags .tag + .tag::before {
-  content: "\00a0·\00a0";
-  display: inline-block;
-  color: var(--text);
-  text-decoration: none;
-  pointer-events: none;
-}
 
 
 /* ==========================================

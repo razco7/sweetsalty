@@ -69,9 +69,10 @@ search. Do not hand-write recipe cards into collection pages.
 
 Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
 - `desc` is the card blurb (also used in the Pinterest pin CSV). Keep it
-  **short and uniform — roughly 55–75 characters**. Cards clamp it to 3 lines
-  and reserve that height so every card lines up; a much longer `desc` gets a
-  "…". After editing any `desc`, re-run `python3 scripts/generate_pins.py`.
+  **short and uniform — roughly 35–48 characters**. Cards render it as exactly
+  2 lines (clamped if longer, reserved if shorter) so every card is the same
+  height; over ~48 chars it starts showing a "…" on the narrower column
+  counts. After editing any `desc`, re-run `python3 scripts/generate_pins.py`.
 - `tags` must exactly match existing tag names (see `TAG_LINKS` for the
   full list and which collection page each tag routes to).
 - `date: 'YYYY-MM-DD'` (optional) shows a green "New!" badge and sorts the
@@ -280,14 +281,15 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
-- **Recipe cards** keep tight, consistent vertical spacing: description clamped
-  to 3 reserved lines (`-webkit-line-clamp` + `min-height` on
-  `.recipe-card-body p`) so the tag row starts at the same place across a grid
-  row, and tags sit directly under the description (no `margin-top: auto` — it
-  opened a big gap on cards whose row-mate had a wrapping tag row). Keep `desc`
-  strings ~55–75 chars so the clamp doesn't bite. Card titles are natural height
-  (no `min-height`); a rare two-line title makes that one card ~one line taller
-  with the slack falling below the tags.
+- **Recipe cards** keep tight, consistent vertical spacing: the description is
+  a fixed 2 lines (`-webkit-line-clamp: 2` + `min-height: 48px` on
+  `.recipe-card-body p`) so every card body is the same height, and the tags
+  sit directly under it (no `margin-top: auto` — it opened a big gap on cards
+  whose row-mate had a wrapping tag row). Gaps: image→title 12px, title→desc
+  6px, desc→tags 10px. Card titles are natural height (no `min-height` — it left
+  dead space under one-line titles); the ~3 recipes with a title long enough to
+  wrap at 4-col make that one card ~one line taller, slack falling below the
+  tags.
 - **Recipe-card tags** (`.recipe-tags .tag`, rendered by `recipeCardHTML`):
   14px, no underline at rest, `·` separators (a `::after` on non-last tags so a
   wrap trails the dot rather than orphaning it), underline + green on hover.

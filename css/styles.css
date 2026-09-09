@@ -605,14 +605,15 @@ section { padding: 80px 0; }
   font-size: 16px; color: #777;
   line-height: 24px; margin-bottom: 10px;
   font-weight: 300;
-  /* Clamp every description to 3 lines and always reserve those 3 lines, so
-     the tag rows line up across a grid row. Keep card `desc` strings ≲85 chars
-     so this rarely actually truncates. */
+  /* Every description is exactly 2 lines — clamped if longer, reserved if
+     shorter — so card bodies are the same height and the tag rows line up
+     with no dead space. Keep `desc` strings short (~40–55 chars) to minimise
+     the "…" on the narrowest (4–6 col) card widths. */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
-  min-height: 72px;
+  min-height: 48px;
 }
 .recipe-tags {
   display: flex;

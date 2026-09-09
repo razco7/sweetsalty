@@ -8,9 +8,9 @@
     "datePublished": "2026-05-27"
   },
   "biscotti": {
-    "prepTime": "PT2H",
-    "cookTime": "PT40M",
-    "totalTime": "PT2H40M",
+    "prepTime": "PT20M",
+    "cookTime": "PT45M",
+    "totalTime": "PT1H20M",
     "recipeYield": "30–36 pieces",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
@@ -43,7 +43,7 @@
     "prepTime": "PT30M",
     "cookTime": "PT15M",
     "totalTime": "PT45M",
-    "recipeYield": "4–5 soufflés",
+    "recipeYield": "4 soufflés",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
   },
@@ -56,9 +56,9 @@
     "datePublished": "2026-05-27"
   },
   "sable-cookies": {
-    "prepTime": "PT50M",
+    "prepTime": "PT20M",
     "cookTime": "PT15M",
-    "totalTime": "PT1H5M",
+    "totalTime": "PT1H40M",
     "recipeYield": "24–30 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
@@ -81,8 +81,8 @@
   },
   "chocolate-chip-cookies": {
     "prepTime": "PT30M",
-    "cookTime": "PT12M",
-    "totalTime": "PT42M",
+    "cookTime": "PT10M",
+    "totalTime": "PT40M",
     "recipeYield": "30–40 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
@@ -121,8 +121,8 @@
   },
   "new-york-cheesecake": {
     "prepTime": "PT30M",
-    "cookTime": "PT1H10M",
-    "totalTime": "PT6H40M",
+    "cookTime": "PT1H25M",
+    "totalTime": "PT7H",
     "recipeYield": "12–16 slices",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"

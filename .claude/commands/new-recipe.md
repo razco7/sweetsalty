@@ -193,10 +193,8 @@ fields: `prepTime`, `cookTime`, `totalTime`, `recipeYield`, `author`
 loudly — that's intended.
 
 **6. Tags & collection pages.**
-- Every tag needs a `TAG_LINKS` entry in `js/main.js`.
-- The card renderer already drops the link on a tag that points at the current
-  page (renders `<span class="tag tag--static">` instead) — nothing to do, but
-  don't undo it.
+- Every tag needs a `TAG_LINKS` entry in `js/main.js`. Card tags are plain
+  links, all clickable — don't add "self-link" special-casing (tried, reverted).
 - **Every country gets its own collection page from its first recipe** — no
   country ever points at a broader collection. So if this recipe opens a new
   country (or is the first for a country that somehow lacks a page), create

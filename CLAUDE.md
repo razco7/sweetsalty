@@ -272,10 +272,11 @@ be visibly wrong-sized for one frame before JS corrects it.
   however few recipes it holds — no country routes to a broader page like
   `sweet-recipes.html`. A one-recipe collection is fine; the point is that
   clicking a country tag always lands somewhere that page is *about* that
-  country.
-- On a card, a tag pointing at the page you're already viewing renders as
-  `<span class="tag tag--static">` (muted, no link) instead of a self-link
-  that reloads the same page — handled in `recipeCardHTML` in `main.js`.
+  country. (`Cake` and `Dessert` still route to `sweet-recipes.html` — there's
+  no dedicated page for either.)
+- Card tags are always plain links, every one clickable — including a tag that
+  points at the page you're already on. Don't special-case "self-links"; a
+  deliberate design decision (tried muting them, reverted).
 
 ## Contact form
 

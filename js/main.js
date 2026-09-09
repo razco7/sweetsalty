@@ -124,16 +124,7 @@ function recipeCardHTML(r) {
   const href = r.page ? p(r.page) : '#';
   const popularBadge = r.popular ? '<span class="badge-popular">Popular Recipe</span>' : '';
   const newBadge = isNewRecipe(r) ? '<span class="badge-new">New!</span>' : '';
-  const tags = r.tags.map(t => {
-    const dest = TAG_LINKS[t] || 'all-recipes.html';
-    // Don't link a tag that points at the page we're already on (e.g. the
-    // "Germany" tag on a card shown in the Germany collection) — a link that
-    // reloads the same page reads as broken.
-    const onThisPage = new URL(p(dest), location.href).pathname === location.pathname;
-    return onThisPage
-      ? `<span class="tag tag--static">${t}</span>`
-      : `<a href="${p(dest)}" class="tag">${t}</a>`;
-  }).join('');
+  const tags = r.tags.map(t => `<a href="${p(TAG_LINKS[t] || 'all-recipes.html')}" class="tag">${t}</a>`).join('');
   const imgTag = `<img src="${p(r.img)}" alt="${r.title}" loading="lazy" width="800" height="800">`;
   const imgWrap = r.page
     ? `<a href="${href}" class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</a>`

@@ -632,6 +632,9 @@ section { padding: 80px 0; }
 }
 .tag:hover { color: var(--green); }
 a.tag { cursor: pointer; }
+/* A tag pointing at the current page — shown, but not a link. */
+.tag--static { text-decoration: none; color: var(--text-muted); cursor: default; }
+.tag--static:hover { color: var(--text-muted); }
 .recipe-tags .tag + .tag::before {
   content: "\00a0·\00a0";
   display: inline-block;

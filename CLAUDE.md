@@ -97,9 +97,9 @@ favour uncommon-but-searched dishes; weight for seasonality 6–8 weeks
 out). It writes nothing except logging the 5 as `proposed` in
 `data/recipe-ideas.json`, then stops. **Phase 2** (`build <slug>`) builds
 one approved idea end to end — recipe page, `ALL_RECIPES` entry, the three
-`data/*.json` entries, a collection page if the country hits 4, all four
-SEO generators, the pin, cache-buster bump — pausing once for Raz to
-supply the photo, and ending with a PR (never a merge).
+`data/*.json` entries, a country collection page if one doesn't exist
+yet, all four SEO generators, the pin, cache-buster bump — pausing once
+for Raz to supply the photo, and ending with a PR (never a merge).
 
 `data/recipe-ideas.json` is an append-only log (`proposed` / `rejected` /
 `published`) — **never pruned**; it's the long-term memory of what's been
@@ -268,6 +268,14 @@ be visibly wrong-sized for one frame before JS corrects it.
   without wrapping below ~860px.
 - All font sizes are in `px`, not `rem`/`em`, sitewide (converted
   deliberately — don't reintroduce rem/em).
+- **Every country tag has its own `collection-pages/<country>-recipes.html`**,
+  however few recipes it holds — no country routes to a broader page like
+  `sweet-recipes.html`. A one-recipe collection is fine; the point is that
+  clicking a country tag always lands somewhere that page is *about* that
+  country.
+- On a card, a tag pointing at the page you're already viewing renders as
+  `<span class="tag tag--static">` (muted, no link) instead of a self-link
+  that reloads the same page — handled in `recipeCardHTML` in `main.js`.
 
 ## Contact form
 

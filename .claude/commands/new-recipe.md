@@ -193,23 +193,21 @@ fields: `prepTime`, `cookTime`, `totalTime`, `recipeYield`, `author`
 loudly — that's intended.
 
 **6. Tags & collection pages.**
-- Every tag needs a `TAG_LINKS` entry in `js/main.js`. A country still below 4
-  points at a **broader** collection — use `collection-pages/sweet-recipes.html`,
-  the way `Austria` and `Netherlands` currently do. (`Denmark` and `Germany`
-  already have own pages from an earlier pass — leave those as-is.)
-- Add the render-time fallback at `js/main.js` ~line 126 so a missing entry can
-  never emit a broken href:
-  `` `<a href="${p(TAG_LINKS[t] || 'all-recipes.html')}" class="tag">${t}</a>` ``
-- **When this recipe brings a country to 4**, create
-  `collection-pages/<country>-recipes.html` following the existing pattern
-  (`germany-recipes.html` is the compact template): `<title>`, `og:*` +
-  `twitter:*` (image `https://sweetsalty.info/images/ingredients-banner.jpg`),
-  `<h1><Country> recipe collection</h1>`, a **one-sentence intro in the site's
-  voice** (unique — don't reuse another country's), `<div class="recipe-grid"
+- Every tag needs a `TAG_LINKS` entry in `js/main.js`.
+- The card renderer already drops the link on a tag that points at the current
+  page (renders `<span class="tag tag--static">` instead) — nothing to do, but
+  don't undo it.
+- **Every country gets its own collection page from its first recipe** — no
+  country ever points at a broader collection. So if this recipe opens a new
+  country (or is the first for a country that somehow lacks a page), create
+  `collection-pages/<country>-recipes.html` following the compact template
+  (`germany-recipes.html`): `<title>`, `og:*` + `twitter:*` (image
+  `https://sweetsalty.info/images/ingredients-banner.jpg`), `<h1><Country>
+  recipe collection</h1>`, a **one-sentence intro in the site's voice** (unique
+  — don't reuse another country's), `<div class="recipe-grid"
   data-tag="<Country>"></div>`. Leave the SEO-tags and static-links blocks for
-  the generators. Then repoint `TAG_LINKS['<Country>']` to the new page, and fix
-  the hand-written hero tag href on **every** existing recipe page for that
-  country.
+  the generators. Then point `TAG_LINKS['<Country>']` at it and set the
+  hand-written hero tag href on every recipe page for that country.
 - **When introducing a brand-new country** (block of 4), also add it to
   `CUISINE_ADJECTIVE` in `scripts/generate_schema.py` (e.g.
   `"Portugal": "Portuguese"`) or `recipeCuisine` comes out wrong.

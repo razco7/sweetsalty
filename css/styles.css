@@ -603,11 +603,11 @@ section { padding: 80px 0; }
 .recipe-card-body h3 a:hover { color: var(--coral); }
 .recipe-card-body p {
   font-size: 16px; color: #777;
-  line-height: 24px; margin-bottom: 12px;
+  line-height: 24px; margin-bottom: 10px;
   font-weight: 300;
   /* Clamp every description to 3 lines and always reserve those 3 lines, so
-     card bodies are the same height and the tag rows line up across a grid row.
-     Keep card `desc` strings ≲85 chars so this rarely actually truncates. */
+     the tag rows line up across a grid row. Keep card `desc` strings ≲85 chars
+     so this rarely actually truncates. */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -619,7 +619,8 @@ section { padding: 80px 0; }
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 0;
-  margin-top: auto; /* pin to the bottom of the card body */
+  /* sits right under the description — not pinned to the card bottom, which
+     opened a big gap on cards whose row-mate had a wrapping tag row */
 }
 .tag {
   display: inline-block;

@@ -1,0 +1,28 @@
+name: Check sitemap status
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Write service account credentials
+        run: echo "$GSC_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/gsc-service-account.json"
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+
+      - name: Check sitemap status
+        run: python3 scripts/check_sitemap_status.py
+        env:
+          GSC_SERVICE_ACCOUNT_FILE: ${{ runner.temp }}/gsc-service-account.json
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}

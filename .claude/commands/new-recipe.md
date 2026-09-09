@@ -149,6 +149,23 @@ it. If you're unsure of a ratio, hydration, pan size, bake temp/time, or yield,
 silently. Use well-established proportions from a reliable source; don't
 improvise quantities.
 
+- **AI-sourced recipes skew hot, long, and optimistic.** When adapting one,
+  start the **bake temp/time** conservative (it's easier to bump up on a test
+  bake than to un-burn a batch) and treat the stated **yield** as a loose guess.
+- **Don't state a specific keeping time** ("stays crisp for weeks", "keeps a
+  month") unless it's verified — default to vague ("keeps well", "crisp for
+  days"). This came up on the Syrian ka'ak: bake temp, yield, and shelf-life
+  claims all needed dialing back after publish.
+
+### Renaming an existing recipe
+
+Not a Phase-2 job, but if asked: it's a slug change, so the old
+`recipe-pages/<old-slug>.html` becomes a redirect stub and gets added to the
+generators' `EXCLUDE` — full process in **CLAUDE.md → "Redirect stubs"**. Also
+rename `images/<slug>.jpg` (+`@2x`), `pins/<slug>.jpg`, and the keys in
+`recipe-meta.json` / `pin-titles.json`, and repoint the homepage "Selected
+cookie recipes" card if it's featured there.
+
 ### Part A — build everything except the photo
 
 Do all of this, then output the image prompt and **stop**.

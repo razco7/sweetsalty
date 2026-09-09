@@ -143,14 +143,22 @@ panel, a coral footer bar — plus `pins/pinterest-bulk-upload.csv` for
 Pinterest's bulk-upload tool.
 
 ```bash
-python3 scripts/generate_pins.py              # all 19
-python3 scripts/generate_pins.py --only pizza # a single recipe, for previewing
+python3 scripts/generate_pins.py                 # every recipe + a full CSV
+python3 scripts/generate_pins.py --only sachertorte  # one pin + a one-row CSV
 ```
 
 Re-run it whenever a recipe's photo, tags, or `data/recipe-meta.json`
 entry changes, or after editing `data/pin-titles.json` — it's
 idempotent, and `pins/` is committed (not gitignored) since the CSV
 references the images by their live site URL.
+
+**`--only <slug>` overwrites `pinterest-bulk-upload.csv` with just that
+one row** — not a preview side effect, it's the point. After the initial
+all-recipes upload, each new recipe is scheduled by uploading its own
+one-row CSV, so the weekly pipeline runs `--only`. To rebuild the full
+CSV (all recipes, dates restarting tomorrow), run the script with no
+`--only` — but don't re-upload that or you'll double-schedule the pins
+already queued on Pinterest.
 
 - Pin **titles** come from `data/pin-titles.json` (`{"slug": "title"}`)
   — falls back to the site's own recipe title if a slug has no entry,

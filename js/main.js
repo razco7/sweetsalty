@@ -88,6 +88,7 @@ const ALL_RECIPES = [
   { title: 'Croissant', img: 'images/croissant.jpg', desc: 'Flaky, buttery pastry known for its crescent shape, an emblem of French cuisine', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/croissant.html', popular: false },
   { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Delicate crescent-shaped shortbread cookies rolled in vanilla sugar, an Austrian Christmas classic', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false, date: '2026-08-29' },
   { title: 'Gevulde Koek', img: 'images/gevulde-koek.jpg', desc: 'A round Dutch shortcrust cookie filled with sweet almond paste and topped with a single whole almond', tags: ['Cookie','Netherlands','Sweet','Moderate'], page: 'recipe-pages/gevulde-koek.html', popular: false, date: '2026-09-08' },
+  { title: 'Sachertorte', img: 'images/sachertorte.jpg', desc: "Vienna's iconic dense chocolate cake, layered with apricot jam and finished with a glossy dark chocolate glaze", tags: ['Cake','Austria','Sweet','Hard'], page: 'recipe-pages/sachertorte.html', popular: false, date: '2026-09-09' },
 ];
 
 const TAG_LINKS = {
@@ -112,7 +113,7 @@ const TAG_LINKS = {
 };
 
 /* ---- Recipe grid rendering (collection & all-recipes pages) ---- */
-const NEW_BADGE_DAYS = 30;
+const NEW_BADGE_DAYS = 7;
 function isNewRecipe(r) {
   if (!r.date) return false;
   const daysSince = (Date.now() - new Date(r.date + 'T00:00:00')) / 86400000;
@@ -123,7 +124,7 @@ function recipeCardHTML(r) {
   const href = r.page ? p(r.page) : '#';
   const popularBadge = r.popular ? '<span class="badge-popular">Popular Recipe</span>' : '';
   const newBadge = isNewRecipe(r) ? '<span class="badge-new">New!</span>' : '';
-  const tags = r.tags.map(t => `<a href="${p(TAG_LINKS[t])}" class="tag">${t}</a>`).join('');
+  const tags = r.tags.map(t => `<a href="${p(TAG_LINKS[t] || 'all-recipes.html')}" class="tag">${t}</a>`).join('');
   const imgTag = `<img src="${p(r.img)}" alt="${r.title}" loading="lazy" width="800" height="800">`;
   const imgWrap = r.page
     ? `<a href="${href}" class="recipe-card-img">${popularBadge}${newBadge}${imgTag}</a>`

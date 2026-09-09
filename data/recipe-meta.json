@@ -150,5 +150,13 @@
     "recipeYield": "10–12 cookies",
     "author": "Sweet / Salty",
     "datePublished": "2026-09-08"
+  },
+  "sachertorte": {
+    "prepTime": "PT40M",
+    "cookTime": "PT50M",
+    "totalTime": "PT4H",
+    "recipeYield": "12–14 slices",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-09-09"
   }
 }

@@ -22,9 +22,10 @@
     "name": "Sachertorte",
     "country": "Austria",
     "type": "Cake",
-    "status": "proposed",
+    "status": "published",
     "proposed": "2026-09-09",
-    "note": "Austria backlog (+2). Fills BOTH thin buckets — Cake (was 1) and Hard (was 1, only the macaron). Site has no chocolate cake. Not obscure, but large evergreen + winter demand justifies it over rule 5."
+    "built": "2026-09-09",
+    "note": "Austria backlog (+2 -> Austria now 3). Fills BOTH thin buckets — Cake (was 1) and Hard (was 1, only the macaron). Site has no chocolate cake. Picked first from the queued set of 5; PR open, awaiting Raz review + merge."
   },
   {
     "slug": "knafeh",

@@ -2,3 +2,6 @@ google-api-python-client
 google-auth
 google-auth-httplib2
 beautifulsoup4
+Pillow
+fonttools
+brotli

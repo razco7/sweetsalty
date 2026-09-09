@@ -9,3 +9,7 @@ __pycache__/
 
 # Search Console service account key — never commit credentials
 scripts/credentials/
+
+# Fonts converted from woff2 for Pillow (Pin generation) — regenerated
+# from the real fonts/*.woff2 source, never itself a source of truth
+scripts/.font-cache/

@@ -25,6 +25,7 @@ sitemap.xml, robots.txt    Generated — see SEO & structured data below
 scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
 data/*.json                Hand-maintained inputs the generators can't derive on their own
 reports/*.md               Weekly Search Console reports (auto-committed, see below)
+pins/                      Generated Pinterest pin images + bulk-upload CSV (see scripts/README.md)
 .github/workflows/         Weekly Search Console report + an on-demand sitemap check
 ```
 
@@ -91,6 +92,9 @@ sections, numbered Instructions, and a "Tips & Notes" box.
   structured data below) and re-run the four generator scripts. A new
   recipe with no `recipe-meta.json` entry makes `generate_schema.py` fail
   loudly rather than ship broken schema — that's intentional.
+- If generating a Pinterest pin for it: add a search-friendly title to
+  `data/pin-titles.json` and re-run `scripts/generate_pins.py` (falls
+  back to the site title, flagged, if skipped — see scripts/README.md).
 
 ## SEO & structured data
 

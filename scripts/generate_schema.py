@@ -91,6 +91,7 @@ def parse_all_recipes(js_text):
         img = field("img")
         page = field("page")
         date = field("date")
+        desc = field("desc")
         tags_m = re.search(r"tags:\s*\[(.*?)\]", line)
         tags = [t.strip().strip("'\"") for t in tags_m.group(1).split(",")] if tags_m else []
 
@@ -98,7 +99,7 @@ def parse_all_recipes(js_text):
             sys.exit(f"ERROR: could not parse an ALL_RECIPES entry — line was:\n{line}")
 
         recipes.append({
-            "title": title, "img": img, "page": page, "tags": tags, "date": date,
+            "title": title, "img": img, "page": page, "tags": tags, "date": date, "desc": desc,
         })
     return recipes
 

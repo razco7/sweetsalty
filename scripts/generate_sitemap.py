@@ -26,6 +26,9 @@ EXCLUDE = {"404.html", "googlebc8928ca4194ad24.html"}
 
 
 def discover_pages():
+    # Only *.html patterns are globbed, so pins/*.jpg (Pinterest pin
+    # images, see generate_pins.py) is never picked up here — they're
+    # images, not pages, and shouldn't be in the page sitemap.
     pages = []
     for pattern in ("*.html", "recipe-pages/*.html", "collection-pages/*.html"):
         for p in sorted(ROOT.glob(pattern)):

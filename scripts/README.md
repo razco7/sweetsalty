@@ -134,3 +134,40 @@ all: `.github/workflows/check-sitemap-status.yml` (`workflow_dispatch`
 only, no schedule) — trigger with `gh workflow run
 check-sitemap-status.yml` and read the result with `gh run view <run-id>
 --log`.
+
+## generate_pins.py
+
+Generates a Pinterest pin image (`pins/<slug>.jpg`, 1000×1500) for every
+recipe — the `@2x` hero photo, a title + time/yield meta line on a cream
+panel, a coral footer bar — plus `pins/pinterest-bulk-upload.csv` for
+Pinterest's bulk-upload tool.
+
+```bash
+python3 scripts/generate_pins.py              # all 19
+python3 scripts/generate_pins.py --only pizza # a single recipe, for previewing
+```
+
+Re-run it whenever a recipe's photo, tags, or `data/recipe-meta.json`
+entry changes, or after editing `data/pin-titles.json` — it's
+idempotent, and `pins/` is committed (not gitignored) since the CSV
+references the images by their live site URL.
+
+- Pin **titles** come from `data/pin-titles.json` (`{"slug": "title"}`)
+  — falls back to the site's own recipe title if a slug has no entry,
+  and the script prints which ones fell back. The title font
+  auto-shrinks (58px down to 36px) if it wraps past 2 lines, so an
+  unexpectedly long title can't crowd the panel.
+- **Fonts**: Pillow can't rasterize the site's woff2 files directly, so
+  each weight needed gets converted to TTF once via fontTools and
+  cached in `scripts/.font-cache/` (gitignored — regenerated from the
+  real `fonts/*.woff2` source, delete it any time).
+- **CSV publish dates** spread evenly across 27 days starting tomorrow
+  at 20:00 — re-running the script shifts every date forward relative
+  to whatever "tomorrow" is on the day you run it, so generate the CSV
+  right before actually uploading it to Pinterest, not far in advance.
+- **Pinterest board** is inferred from each recipe's type tag (Cookie /
+  Pastry / Cake+Dessert / Breakfast) — a recipe untagged with one of
+  those gets an empty board column, which Pinterest's bulk uploader
+  will reject; that shouldn't currently happen, but if a future recipe
+  only carries a country/Sweet-Salty/difficulty tag, add its type tag
+  to `BOARD_MAP` in the script.

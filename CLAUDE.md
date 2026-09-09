@@ -69,7 +69,7 @@ search. Do not hand-write recipe cards into collection pages.
 
 Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
 - `desc` is the card blurb (also used in the Pinterest pin CSV). Keep it
-  **short and uniform — roughly 35–48 characters**. Cards render it as exactly
+  **short and uniform — roughly 30–48 characters**. Cards render it as exactly
   2 lines (clamped if longer, reserved if shorter) so every card is the same
   height; over ~48 chars it starts showing a "…" on the narrower column
   counts. After editing any `desc`, re-run `python3 scripts/generate_pins.py`.
@@ -281,15 +281,17 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
-- **Recipe cards** keep tight, consistent vertical spacing: the description is
-  a fixed 2 lines (`-webkit-line-clamp: 2` + `min-height: 48px` on
-  `.recipe-card-body p`) so every card body is the same height, and the tags
-  sit directly under it (no `margin-top: auto` — it opened a big gap on cards
-  whose row-mate had a wrapping tag row). Gaps: image→title 12px, title→desc
-  6px, desc→tags 10px. Card titles are natural height (no `min-height` — it left
-  dead space under one-line titles); the ~3 recipes with a title long enough to
-  wrap at 4-col make that one card ~one line taller, slack falling below the
-  tags.
+- **Recipe cards** keep tight, consistent vertical spacing. Nothing reserves
+  extra height — every fixed reserve (`min-height` on the title, then a 3-line
+  then 2-line reserve on the description) left visible dead space at some
+  viewport width and was removed. Instead the `desc` strings are kept short
+  enough (~30–48 chars) that they're a consistent line count at any given card
+  width, so tag rows line up on their own. `.recipe-card-body p` just caps at
+  `-webkit-line-clamp: 2` as a safety net. Gaps: image→title 12px, title→desc
+  6px, desc→tags 10px (no `margin-top: auto` on `.recipe-tags`). The ~2 recipes
+  with a title long enough to wrap at 4-col ("Chocolate Chip Cookie", "New York
+  Cheesecake") make that one card ~32px taller — real content, slack falls
+  below the tags.
 - **Recipe-card tags** (`.recipe-tags .tag`, rendered by `recipeCardHTML`):
   14px, no underline at rest, `·` separators (a `::after` on non-last tags so a
   wrap trails the dot rather than orphaning it), underline + green on hover.

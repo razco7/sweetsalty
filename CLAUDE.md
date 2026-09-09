@@ -276,9 +276,13 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
-- Card tags are always plain links, every one clickable — including a tag that
-  points at the page you're already on. Don't special-case "self-links"; a
-  deliberate design decision (tried muting them, reverted).
+- **Recipe-card tags** (`.recipe-tags .tag`, rendered by `recipeCardHTML`):
+  14px, no underline at rest, `·` separators (a `::after` on non-last tags so a
+  wrap trails the dot rather than orphaning it), underline + green on hover.
+  Every tag is a plain clickable link — including one pointing at the current
+  page; don't special-case "self-links" (tried muting them, reverted). The
+  always-on underline on the recipe-page **hero** tags (`.recipe-hero-tags`,
+  18px) comes from the base `.tag` rule and is intentionally kept.
 
 ## Contact form
 

@@ -605,12 +605,14 @@ section { padding: 80px 0; }
   font-size: 16px; color: #777;
   line-height: 24px; margin-bottom: 10px;
   font-weight: 300;
-  /* Natural height (1 line on wide cards, 2 on narrow) so the tags always sit
-     tight under the text — no reserved blank line. 2-line clamp is a safety
-     cap; keep `desc` strings ~35–48 chars. */
+  /* Always two lines tall: min-height reserves the second line so short
+     descriptions don't leave the tag row floating under a lone line, and the
+     line-clamp caps longer ones at the same two lines. Keep `desc` strings
+     ~35–48 chars so they fill roughly two lines at 4-col width. */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  min-height: 48px;
   overflow: hidden;
 }
 .recipe-tags {

@@ -266,7 +266,7 @@ be visibly wrong-sized for one frame before JS corrects it.
   #F8F4EE`, `--border: #E8E3DB`. **Do not use `--accent` (#C4952C, a
   golden-brown)** — it was deliberately removed from all button hover
   states; dark pill buttons hover to `#333` instead.
-- Grid breakpoints: recipe-grid is 4 cols by default, 5 at ≥1440px, 6 at
+- Grid breakpoints: recipe-grid is 4 cols by default (up to 1919px), 6 at
   ≥1920px (3 at ≤1100px, 2 at ≤900px, 1 at ≤500px).
 - Mobile nav (hamburger) kicks in at ≤900px — deliberately higher than the
   usual 768px, because the desktop nav items (All recipes / Top

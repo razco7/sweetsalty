@@ -244,6 +244,22 @@ weight:
 - `<meta name="p:domain_verify" ...>` in `index.html`'s `<head>` —
   Pinterest's domain claim, checked only on the homepage.
 
+## Redirect stubs
+
+When a recipe is renamed (its slug changes), the old
+`recipe-pages/<old-slug>.html` stays as a tiny redirect stub —
+`<meta http-equiv="refresh">` + canonical + `noindex` — so the
+already-indexed old URL doesn't 404 (GitHub Pages can't do real
+redirects). Each stub's filename must be added to the `EXCLUDE` set in
+**both** `scripts/generate_sitemap.py` and `scripts/add_seo_tags.py`, or
+the generators will treat it as a real page (`add_seo_tags.py` errors on
+the missing `og:description`; the sitemap gets a redirect URL in it).
+`generate_schema.py` and `generate_static_links.py` need no change —
+they only touch pages listed in `ALL_RECIPES`.
+
+Current stubs: `savory-libyan-kaak.html` → `savory-syrian-kaak.html`
+(the recipe is Aleppan / Ka'ak Halabi, not Libyan).
+
 ## Fonts
 
 Poppins is self-hosted from `fonts/*.woff2` via `@font-face` in

@@ -1,9 +1,9 @@
 {
-  "savory-libyan-kaak": {
-    "prepTime": "PT20M",
-    "cookTime": "PT30M",
-    "totalTime": "PT50M",
-    "recipeYield": "60–70 Ka'aks",
+  "savory-syrian-kaak": {
+    "prepTime": "PT40M",
+    "cookTime": "PT25M",
+    "totalTime": "PT2H",
+    "recipeYield": "About 40 ka'ak",
     "author": "Sweet / Salty",
     "datePublished": "2026-05-27"
   },

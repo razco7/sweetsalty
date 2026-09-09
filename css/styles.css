@@ -596,9 +596,8 @@ section { padding: 80px 0; }
 .recipe-card-body h3 {
   font-size: 24px; margin-bottom: 6px;
   font-weight: 700;
-  line-height: 40px;
+  line-height: 32px;
   margin-top: 8px;
-  min-height: 80px; /* 2 lines — a title that wraps doesn't shove the row out of line */
 }
 .recipe-card-body h3 a { color: var(--text); transition: color var(--ease); }
 .recipe-card-body h3 a:hover { color: var(--coral); }
@@ -1190,7 +1189,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .page-header h1 { font-size: 32px; line-height: 44px; }
   .page-header p { font-size: 18px; line-height: 28px; }
   .banner-body { font-size: 24px; line-height: 36px; }
-  .recipe-card-body h3 { font-size: 20px; line-height: 32px; min-height: 64px; }
+  .recipe-card-body h3 { font-size: 20px; line-height: 28px; }
 }
 
 @media (max-width: 900px) {
@@ -1238,7 +1237,7 @@ body:has(.notfound-section) { padding-top: 0; }
   .section-heading--left h2 { font-size: 24px; line-height: 36px; }
   .page-header h1 { font-size: 24px; line-height: 36px; }
   .page-header p { font-size: 16px; line-height: 24px; }
-  .recipe-card-body h3 { font-size: 18px; line-height: 28px; min-height: 56px; }
+  .recipe-card-body h3 { font-size: 18px; line-height: 26px; }
   .ingredients-list li { font-size: 16px; }
   .ingredients-list li em { font-size: 16px !important; }
   .instructions-list li .step-content { font-size: 16px; line-height: 26px; }

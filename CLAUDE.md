@@ -280,11 +280,12 @@ be visibly wrong-sized for one frame before JS corrects it.
   country under 4 recipes is the recipe pipeline's top priority (see "Weekly
   recipe pipeline"), so thin pages get filled fast. (`Cake` and `Dessert` still
   route to `sweet-recipes.html` — there's no dedicated page for either.)
-- **Recipe cards** are kept a uniform height so grid rows line up: the title
-  reserves 2 lines (`min-height` on `.recipe-card-body h3`), the description is
-  clamped to 3 reserved lines (`-webkit-line-clamp` + `min-height` on
-  `.recipe-card-body p`), and `.recipe-tags` has `margin-top: auto` to pin to
-  the bottom. Keep `desc` strings ~55–75 chars so the clamp doesn't bite.
+- **Recipe cards** are kept a uniform height so grid rows line up: the
+  description is clamped to 3 reserved lines (`-webkit-line-clamp` + `min-height`
+  on `.recipe-card-body p`) and `.recipe-tags` has `margin-top: auto` to pin to
+  the bottom. Keep `desc` strings ~55–75 chars so the clamp doesn't bite. Card
+  titles are natural height (no `min-height` — it left a big gap under one-line
+  titles); a rare two-line title makes that one card ~one line taller.
 - **Recipe-card tags** (`.recipe-tags .tag`, rendered by `recipeCardHTML`):
   14px, no underline at rest, `·` separators (a `::after` on non-last tags so a
   wrap trails the dot rather than orphaning it), underline + green on hover.

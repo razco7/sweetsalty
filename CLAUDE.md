@@ -3,7 +3,16 @@
 A static recipe website (cookies, pastry, desserts) migrated from Webflow to
 plain HTML/CSS/JS. No build system, no framework, no package.json.
 
-- **Live site:** https://sweetsalty.info
+> ⚠️ **This repo is being retired.** The site is moving to
+> `sweetsaltyrecipes.com`, which lives in **`razco7/sweetsaltyrecipes`** — do
+> new work there. This repo still serves `sweetsalty.info` during the
+> migration overlap (Phases 1–2 of `sweetsalty-domain-migration.md`); its
+> pages now carry a `<link rel="canonical">` → `sweetsaltyrecipes.com` while
+> everything else (og:url, JSON-LD, `sitemap.xml`, `robots.txt`) still says
+> `sweetsalty.info` on purpose. **Freeze content changes here.** In Phase 3
+> `sweetsalty.info` starts 301-ing (via Cloudflare) and this repo is archived.
+
+- **Live site:** https://sweetsalty.info (→ canonical: https://sweetsaltyrecipes.com)
 - **GitHub Pages:** https://razco7.github.io/sweetsalty (custom domain via IONOS DNS)
 - **Local dev:** `python3 -m http.server 3456` from the project root (or use
   the Browser pane's `preview_start` with the `sweet-salty` launch config)

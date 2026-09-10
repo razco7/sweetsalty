@@ -158,8 +158,10 @@ sections, numbered Instructions, and a "Tips & Notes" box.
 
 Every ingredient line is **metric first, imperial in parentheses** —
 `225g (1 cup) unsalted butter, softened`, `180°C (350°F)`. Don't write
-imperial-first (`1 cup (225g)…`); a few older lines still do and should
-be flipped whenever that page is next edited.
+imperial-first (`1 cup (225g)…`). The one exception, kept for
+readability: small liquid flavourings stay teaspoon-first —
+`1 tsp (5ml) vanilla extract`, not `5ml (1 tsp)…`. (Amounts inside
+instruction prose — "pour about ¼ cup of batter" — are left as prose.)
 
 Gram↔cup pairs use this table (US customary cup, 240ml). Treat it as the
 target, not gospel — rounding to a "nice" fraction is fine within ~±8%

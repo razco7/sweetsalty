@@ -605,13 +605,16 @@ section { padding: 80px 0; }
   font-size: 16px; color: #777;
   line-height: 24px; margin-bottom: 10px;
   font-weight: 300;
-  /* Always two lines tall: min-height reserves the second line so short
-     descriptions don't leave the tag row floating under a lone line, and the
-     line-clamp caps longer ones at the same two lines. Keep `desc` strings
-     ~35–48 chars so they fill roughly two lines at 4-col width. */
+  /* Always exactly two lines. `max-width` pins the text column to ~2 lines'
+     worth regardless of how wide the card gets (6-col ≈ 268px is the natural
+     floor; wider cards would otherwise let a short blurb collapse to one line
+     with a blank reserve under it). min-height reserves the 2nd line for the
+     rare blurb that still wraps short; line-clamp caps longer ones. Keep
+     `desc` strings ~48–58 chars so they fill both lines at this width. */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  max-width: 280px;
   min-height: 48px;
   overflow: hidden;
 }

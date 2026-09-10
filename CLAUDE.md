@@ -69,12 +69,12 @@ search. Do not hand-write recipe cards into collection pages.
 
 Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
 - `desc` is the card blurb (also used in the Pinterest pin CSV). Keep it
-  **short and uniform — roughly 35–48 characters**. Cards render it as exactly
-  2 lines (clamped if longer, reserved if shorter) so every card is the same
-  height; aim for the top of that range so the blurb actually fills two lines
-  rather than leaving the second one blank, and over ~48 chars it starts
-  showing a "…" on the narrower column counts. After editing any `desc`,
-  re-run `python3 scripts/generate_pins.py`.
+  **uniform — roughly 48–58 characters**. The card description column is
+  pinned to a fixed width (`.recipe-card-body p { max-width: 280px }`), so a
+  blurb in that range fills exactly two lines at every breakpoint; under ~46
+  collapses to one line with a blank reserve, over ~60 starts showing a "…"
+  at the 6-col (≥1920px) width. After editing any `desc`, re-run
+  `python3 scripts/generate_pins.py`.
 - `tags` must exactly match existing tag names (see `TAG_LINKS` for the
   full list and which collection page each tag routes to).
 - `date: 'YYYY-MM-DD'` (optional) shows a green "New!" badge and sorts the
@@ -336,14 +336,15 @@ be visibly wrong-sized for one frame before JS corrects it.
   `all-recipes.html`. Tag text must be exactly `Easy`/`Moderate`/`Hard`
   (not "Advanced" etc.) so the collection filter matches.
 - **Recipe cards** keep tight, consistent vertical spacing. The description is
-  always exactly two lines tall: `.recipe-card-body p` has `min-height: 48px`
-  (2 × `line-height`) reserving the second line so short blurbs don't leave the
-  tag row floating under a lone line, plus `-webkit-line-clamp: 2` capping
-  longer ones at the same two lines. (A 1-line-natural / 3-line-reserve history
-  preceded this — both looked empty or left dead space; two fixed lines is the
-  settled answer.) Keep `desc` strings ~35–48 chars so they actually fill close
-  to two lines at 4-col width. A `min-height` on the *title* was tried and
-  removed — that one did leave dead space. Gaps: image→title 12px, title→desc
+  always exactly two lines of text: `.recipe-card-body p` combines
+  `max-width: 280px` (pins the text column to ~2 lines' worth — a card wider
+  than that would otherwise let a short blurb collapse to one line), a
+  `min-height: 48px` reserve, and `-webkit-line-clamp: 2`. Keep `desc` strings
+  ~48–58 chars (see the ALL_RECIPES note above) so every card fills both lines
+  at every breakpoint. (History: 1-line-natural, then 3-line-reserve, then a
+  35–48-char + 48px-reserve pass that still showed one line on wide cards —
+  the max-width is what finally made it consistent.) A `min-height` on the
+  *title* was tried and removed — that one did leave dead space. Gaps: image→title 12px, title→desc
   6px, desc→tags 10px (no `margin-top: auto` on `.recipe-tags`). The ~2 recipes
   with a title long enough to wrap at 4-col ("Chocolate Chip Cookie", "New York
   Cheesecake") make that one card ~32px taller — real content, slack falls

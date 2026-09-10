@@ -68,6 +68,15 @@ automatically appears in All Recipes, every matching collection page, and
 search. Do not hand-write recipe cards into collection pages.
 
 Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
+- `title` is also the recipe's schema `name` (via `generate_schema.py`) and
+  should match the recipe page's `<h1 class="recipe-hero-title">` / `<title>`
+  exactly. **Convention: plural for a countable baked item (`Chocolate Chip
+  Cookies`, `French Macarons`, `Cupcakes`, `Croissants`, `Crêpes`), and a
+  cookie-type title always carries the noun (`Danish Butter Cookies`, not
+  `Danish Butter`); singular for a single assembled or uncountable dish
+  (`Pizza`, `Apple Strudel`, `New York Cheesecake`, `Chocolate Soufflé`,
+  `Muhallebi`, `French Toast`). Established foreign names keep their usual
+  English form (`Biscotti`, `Vanillekipferl`, `Gevulde Koek`).**
 - `desc` is the card blurb (also used in the Pinterest pin CSV). Keep it
   **uniform — roughly 48–58 characters**. In that range it wraps to a full
   two lines at every column count (down to the 6-col ≈ 268px card); under ~46
@@ -76,6 +85,11 @@ Each entry: `{ title, img, desc, tags: [...], page, popular, date }`.
   card — ~470–500px viewport — can still show a short blurb on one line;
   that's accepted, see the Recipe cards note in Design conventions.) After
   editing any `desc`, re-run `python3 scripts/generate_pins.py`.
+- **Voice for `desc`:** lead with a specific verb or an unexpected concrete
+  detail, not a category summary — "blistered Naples crust" not "a popular
+  Italian dish", "rolled warm in vanilla sugar" not "a traditional cookie",
+  "fried crisp outside and tender within", "under a swirl of frosting". It
+  should read like a person wrote it, not a label.
 - `tags` must exactly match existing tag names (see `TAG_LINKS` for the
   full list and which collection page each tag routes to).
 - `date: 'YYYY-MM-DD'` (optional) shows a green "New!" badge and sorts the

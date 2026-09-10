@@ -76,7 +76,7 @@ const ALL_RECIPES = [
   { title: 'Crêpe', img: 'images/crepe.jpg', desc: 'Thin, delicate French pancakes from Brittany', tags: ['Breakfast','France','Sweet','Easy'], page: 'recipe-pages/crepe.html', popular: false },
   { title: 'Chocolate Soufflé', img: 'images/chocolate-souffle.jpg', desc: 'Deep, dark chocolate and impossibly airy', tags: ['Pastry','France','Sweet','Moderate'], page: 'recipe-pages/chocolate-souffle.html', popular: false },
   { title: 'Cupcake', img: 'images/cupcake.jpg', desc: 'Small single-serve cakes, endlessly varied', tags: ['Pastry','USA','Sweet','Moderate'], page: 'recipe-pages/cupcake.html', popular: false },
-  { title: 'Sablé Cookies', img: 'images/sable-cookies.jpg', desc: 'Crisp, sandy French butter cookies from Normandy', tags: ['Cookie','France','Sweet','Easy'], page: 'recipe-pages/sable-cookies.html', popular: false },
+  { title: 'Sablé Cookies', img: 'images/sable-cookies.jpg', desc: 'Crisp, sandy French butter cookies', tags: ['Cookie','France','Sweet','Easy'], page: 'recipe-pages/sable-cookies.html', popular: false },
   { title: 'French Macaron', img: 'images/french-macarons.jpg', desc: 'Almond-meringue shells with ganache', tags: ['Pastry','France','Sweet','Hard'], page: 'recipe-pages/french-macarons.html', popular: false },
   { title: 'Danish Butter', img: 'images/danish-butter-cookies.jpg', desc: 'Buttery, rich, snappingly crisp, subtly vanilla', tags: ['Cookie','Denmark','Sweet','Easy'], page: 'recipe-pages/danish-butter-cookies.html', popular: false },
   { title: 'Chocolate Chip Cookie', img: 'images/chocolate-chip-cookies.jpg', desc: 'Buttery dough loaded with chocolate chips', tags: ['Cookie','USA','Sweet','Easy'], page: 'recipe-pages/chocolate-chip-cookies.html', popular: true },

@@ -124,7 +124,9 @@ Copy the structure of an existing simple recipe (e.g.
 `recipe-pages/italian-s-cookies.html` or `vanillekipferl.html`) rather than
 building from scratch — every recipe page shares: navbar, mobile nav,
 search overlay, `.recipe-hero` (photo | colored info panel), meta row
-(Yield/Prep/Baking/Total time), "What you'll need" + "Ingredients"
+(Yield / Prep Time / Baking Time / Total Time — the third label is
+"Cooking Time" for stovetop recipes with no oven step, e.g. muhallebi,
+crêpe, french-toast), "What you'll need" + "Ingredients"
 sections, numbered Instructions, and a "Tips & Notes" box.
 
 - Recipe photos need **two files** from one square source of at least
